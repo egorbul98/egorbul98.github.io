@@ -591,8 +591,8 @@
           lazyLoad: 'ondemand',
           adaptiveHeight: true,
           arrows: true,
-          prevArrow: '<button id="prev" type="button" class="catalog-complex__slider-prev-btn"><img class="lazy" src="img/content-item-img.png" data-src="img/catalog-slider-prev.svg" alt="img"></button>',
-          nextArrow: '<button id="next" type="button" class="catalog-complex__slider-next-btn"><img class="lazy" src="img/content-item-img.png" data-src="img/catalog-slider-next.svg" alt="img"></button>',
+          prevArrow: '<button id="prev" type="button" class="catalog-complex__slider-prev-btn"><img src="img/catalog-slider-prev.svg" alt="img"></button>',
+          nextArrow: '<button id="next" type="button" class="catalog-complex__slider-next-btn"><img src="img/catalog-slider-next.svg" alt="img"></button>',
         });
         $('.catalog-complex__slide img').off('click')
         $('.catalog-complex__slide img').on('click', function () {
