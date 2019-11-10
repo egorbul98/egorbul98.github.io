@@ -616,7 +616,7 @@
       let minCost = Math.round(parseInt(infoList.minCost) / 1000000);
       let maxCost = Math.round(parseInt(infoList.maxCost) / 1000000);
 
-      str += '<div class="complex">' + infoList.name + '</div><div class="developer"><span class="text">' + infoList.developer + '</span><img src="img/developer_logo.svg" alt=""></div></div><div class="catalog-complex__cost-block"><span class="cost-block__cost-from">' + minCost + '</span> - <span class="cost-block__cost-to">' + maxCost + '</span> млн. руб.</div><div class="catalog-container-wrap"><div class="square-metr">' + infoList.minCostSquare + ' - ' + costSquare.maxCostSquare + ' тыс. руб/м2</div>';
+      str += '<div class="complex">' + infoList.name + '</div><div class="developer"><span class="text">' + infoList.developer + '</span><img src="img/content-item-img.png" data-src="img/developer_logo.svg" alt=""></div></div><div class="catalog-complex__cost-block"><span class="cost-block__cost-from">' + minCost + '</span> - <span class="cost-block__cost-to">' + maxCost + '</span> млн. руб.</div><div class="catalog-container-wrap"><div class="square-metr">' + infoList.minCostSquare + ' - ' + costSquare.maxCostSquare + ' тыс. руб/м2</div>';
       if (!$(parent).hasClass('map__complex-info-inner')) {
         str += '<button type="button" class="btn-phone" data-phone="' + infoList.tel + '"><img class="img-phone" src="img/icon-phone.svg" alt=""><span class="text">+7 Показать телефон</span></button>';
       }
