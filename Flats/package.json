@@ -1,8 +1,11 @@
 {
-  "name": "название проекта",
+  "name": "flats",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "del": "^5.0.0",
     "gulp-htmlmin": "^5.0.1",
@@ -26,17 +29,6 @@
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.2.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YuriyBevov/Flatshop.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YuriyBevov/Flatshop/issues"
-  },
-  "homepage": "https://github.com/YuriyBevov/Flatshop#readme"
+  "license": "ISC"
 }
