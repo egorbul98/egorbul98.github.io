@@ -34,8 +34,7 @@
 
     });
 
-
-
+   
     $('.catalog-nav__item ').click(function (e) { //header buttons
       if (!$(this).hasClass('catalog-nav__item-menu')) {
         $(this).siblings().removeClass('catalog-nav__item--active');
@@ -57,6 +56,8 @@
     $(window).on('resize', function () {
       if ($(this).width() <= 768) {
         $('.catalog-complex__list').removeClass('catalog-complex__list--display-list');
+        $('.list-type__btn-tile').addClass('list-type__btn--active');
+        $('.list-type__btn-list').removeClass('list-type__btn--active');
         reInitSlickFlats();
       }
     });

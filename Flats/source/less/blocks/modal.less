@@ -12,10 +12,19 @@
   transition: opacity 0.3s ;
 }
 
-.modal-close-btn{
+.modal-close-btn, .modal__header-btn-close{
   cursor: pointer;
 }
 
+.modal__header{
+  position: relative;
+}
+.modal__header-btn-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+}
 .modal-header__title-img {
   position: relative;
 
@@ -31,7 +40,6 @@
     .modal__title {
       color: @primary-white;
     }
-
   }
 
   .modal__img {
@@ -46,7 +54,7 @@
   transform: translateX(-50%);
 }
 
-.modal__close-btn {
+.modal__close-btn, .modal__header-btn-close {
   border: none;
   outline: none;
   background-color: transparent;

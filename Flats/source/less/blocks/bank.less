@@ -5,24 +5,16 @@
 }
 
 .bank__title {
-  position: relative;
   font-size: 11px;
   font-weight: 600;
   line-height: 10px;
-  padding-left: 40px;
+  padding-left: 10px;
   color: @light-black;
+}
 
-  &::before {
-    position: absolute;
-    top: -7px;
-    left: 0;
-    width: 27px;
-    height: 26px;
-    content: "";
-    background-image: url("../img/sberbank.png");
-    background-repeat: no-repeat;
-    background-size: 27px 26px;
-  }
+.bank__title-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .bank__term {
@@ -62,14 +54,12 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    padding-left: 70px;
+    padding-left: 20px;
+  }
 
-    &::before {
-      top: -14px;
-      width: 47px;
-      height: 45px;
-      background-size: 47px 45px;
-    }
+  .bank__logo {
+    width: 47px;
+    height: 45px;
   }
 
   .bank__term {

@@ -1,10 +1,33 @@
 
+
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
 //--------------------------AOS--------------------------
-AOS.init({
-  once: false,
-  duration: 700,
-  offset: 120
+$(document).ready(function () {
+  AOS.init({
+    once: true,
+    duration: 700,
+    offset: 60
+  });
+
+  setTimeout(function () {
+    AOS.refresh();
+  }, 200);
+
+
+  $(window).on('resize', function () {
+    AOS.refresh();
+  });
 });
+
 //--------------------------AOS--------------------------
 
 $('.main-nav__list').removeClass('main-nav--nojs');
@@ -40,37 +63,6 @@ $('.main-nav__toggle').on('click', function() {
   $('.main-nav__list').toggle('hidden');
 });
 
-/*(function () {
-  var photoList = [
-    'progress_foto.png', 'progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png',
-    'progress_foto.png', 'progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png',
-    'progress_foto.png', 'progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png','progress_foto.png'
-  ];
-
-  var fragment = document.createDocumentFragment();
-  var galleryPhoto = document.querySelector('#progress-foto');
-
-  var photoToShow = 4;
-
-  $('.progress__btn').on('click', function() {
-    photoToShow = photoList.length;
-    fillPhotos();
-    $(this).hide();
-  });
-
-  var fillPhotos = function () {
-    for (var i = 0; i < photoToShow; i++) {
-      var currentPhoto = galleryPhoto.content.cloneNode(true);
-      fragment.appendChild(currentPhoto);
-    }
-    var progressGallery = document.querySelector('.progress__gallery-list');
-    progressGallery.appendChild(fragment);
-  }
-  fillPhotos();
-}());*/
-
-
-
 (function () {
   var tableBtn = document.querySelectorAll('.description__table');
 
@@ -84,8 +76,6 @@ $('.main-nav__toggle').on('click', function() {
     })
   }
 })();
-
-// change active feedback-link
 
 // скролл по якорю
 
@@ -116,25 +106,58 @@ $(document).ready(function () {
       }
     }]
   });
+
+  $('.estate__slider-item').on('click', function () {
+    $('.estate__slider-box').slick('slickNext');
+  });
 });
 
 
 (function () {
 
-  var WIDTH = 1360;
 
+
+  var WIDTH = 1360;
+$(document).ready(function () {
+  if ($(window).width() >= 1360) {
+  } else {
+    sliderOptions();
+  }
+});
   var sliderOptions = function () {
+    if ($('.expectation__photo-box').hasClass('slick-initialized')) {
+      $('.expectation__photo-box').slick('unslick');
+      $('.expectation__photo-box.slick-slider').off('click', nextSlide);
+    }
     $('.expectation__photo-box').slick({
       autoplay: true,
       autoplaySpeed: 3000,
       adaptiveHeight: false,
       arrows: false,
       mobileFirst: true,
+      // speed: 500,
+      // fade: true,
       responsive: [{
         breakpoint: 1360,
         settings: 'unslick'
       }]
     });
+    if ($(window).width() >= 1360) {
+      $('.expectation__photo-box.slick-slider').off('click', nextSlide);
+    } else {
+      $('.expectation__photo-box.slick-slider').on('click', nextSlide);
+    }
+    $(window).on('resize', function () {
+      if ($(window).width() >= 1360) {
+        $('.expectation__photo-box.slick-slider').off('click', nextSlide);
+      } else {
+        $('.expectation__photo-box.slick-slider').on('click', nextSlide);
+      }
+    });
+
+    function nextSlide() {
+      $(this).slick('slickNext');
+    }
   }
 
   var flag = false;
@@ -185,63 +208,6 @@ $(document).ready(function () {
   title.addEventListener('click', showDeadlineList);
 }());
 
-
-//
-$(document).ready(function () {
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var dataLabels = ['нояб’18', 'дек’18', 'янв’19', 'фев’19', 'март’19', 'апр’19',
-    'май’19'
-  ]; //  массив для изменяемыхданных
-  var data = [80, 83, 75, 90, 95, 125, 110]; // массив для изменяемыхданных
-  var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-      labels: dataLabels,
-      datasets: [{
-        label: '',
-        backgroundColor: 'rgba(233,70,70, 0.1)',
-        borderColor: 'rgb(233,70,70)',
-        borderWidth: 1,
-        pointHoverBackgroundColor: 'rgb(233,70,70)',
-        spanGaps: true,
-        data: data
-      }]
-    },
-
-    // Configuration options go here
-    options: {
-      legend: {
-        display: false
-      },
-      tooltips: {
-        backgroundColor: '#7be37b',
-        bodyFontSize: 16,
-        bodyFontColor: '#fefcfc',
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true
-          },
-          ticks: {
-            min: 0,
-            max: 150,
-            stepSize: 25
-          }
-        }]
-      }
-    }
-  });
-});
-
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -290,6 +256,13 @@ function onPlayerReady(event) {
 }
 
 $(document).ready(function () {
+
+  //------------------------------------
+
+  $('.blog__show-btn').click(function () {//Читать полностью
+    $('.blog__wrapper').find('.hidden').removeClass('hidden');
+    $(this).addClass('hidden');
+  });
   //-----------------калькулятор модальное окно--------------------
   let valueMortgageWork = 2;
   let valueMortgageIncome = 50000;
@@ -331,11 +304,41 @@ $(document).ready(function () {
     checkExpectancy();
   });
   //Открытие закрытие модальных окон
+  $('body').on('click', function (e) {
+    if(!$(e.target).hasClass('light__btn')){
+    if (!$('.modal').hasClass('modal--closed')) {
+      if (!$(e.target).closest('.modal__wrapper').length) {
+        $('.modal').addClass('modal--closed');
+      }
+    }
+    
+    if (!$(e.target).closest('.consultation__wrapper').length) {
+      $('.consultation__modal').addClass('modal--closed');
+      }
+    if (!$(e.target).closest('.modal-feedback__wrapper').length) {
+      $('.modal-feedback').removeClass('modal-feedback--active');
+      }
+    }
+    if (!$(e.target).closest('.modal-to-book__wrapper').length && !$(e.target).hasClass('btnToBook')) {
+      $('.modal-to-book').removeClass('modal-to-book--active');
+    }  
+    
+  });
   $('#btnOpenMortgage').on('click', function () {
     $('.mortgage.mortgage__modal').removeClass('modal--closed');
   });
+
   $('.mortgage .modal__close-btn').on('click', function () {
     $('.mortgage.mortgage__modal').addClass('modal--closed ');
+  });
+
+  $('.modal-to-book__wrapper .modal__close-btn').on('click', function () {
+    $('.modal-to-book').removeClass('modal-to-book--active');
+  });
+
+
+  $('.modal-photo-galery .modal__close-btn').on('click', function () {
+    $('.modal-photo-galery').removeClass('modal-photo-galery--active');
   });
 
   $('#btnOpenExcursionModal').on('click', function () {
@@ -343,6 +346,10 @@ $(document).ready(function () {
   });
   $('.excursion .modal-close-btn').on('click', function () {
     $('.excursion.excursion__modal').addClass('modal--closed');
+  });
+  $('.modal__header-btn-close').on('click', function () {
+    $(this).closest('.modal').addClass('modal--closed');
+
   });
 
 
@@ -439,7 +446,7 @@ $(document).ready(function () {
       result = +result.toFixed(2);
       result = toNumber(result);
       if (result != NaN && result != undefined && result != 'NaN') {
-        console.log(result);
+
         $('.calculator__result').text(result + ' руб.');
       } else {
         $('.calculator__result').text(0 + ' руб.');

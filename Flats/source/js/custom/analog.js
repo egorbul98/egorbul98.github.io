@@ -91,7 +91,7 @@
   var fragment = document.createDocumentFragment(); // fragment
   var template = document.querySelector('#analog-template'); // template
   var analogBox = document.querySelector('#analogList'); // box
-  var analogModal = document.querySelector('#analogModal') // analog Modal
+  //var analogModal = document.querySelector('#analogModal') // analog Modal
 
   var analogItems = 2;
 
@@ -115,41 +115,6 @@
       analogBox.appendChild(fragment);
   };
 
-  var createAnalogSliderNode = function () {
-    for(var i = 0; i < analogArray.length; i++) {
-      var currentItem = template.content.cloneNode(true); // clone template
-      var analogData = analogArray[i]; // current analog
-
-      fillAnalogNode(currentItem, analogData); // run fill func
-
-      fragment.appendChild(currentItem);
-    };
-      analogModal.appendChild(fragment);
-  };
-
-  $('.analog__btn').on('click', function () {
-    $('.analog__modal').removeClass('modal--closed');
-
-    $('.analog__modal-slider').slick({
-      adaptiveHeight: false,
-      arrows: true,
-      prevArrow: '<button id="prev" type="button" class="analog__slider-prevBtn"></button>',
-      nextArrow: '<button id="next" type="button" class="analog__slider-nextBtn"></button>',
-      responsive: [{
-        breakpoint: 768,
-        settings: {
-          arrows: false
-        }
-      }]
-    });
-  });
-
-  $('.analog__modal-closeBtn').on('click', function () {
-    $('.analog__modal').addClass('modal--closed');
-    $('.analog__modal-slider').slick('unslick');
-  });
-
-  createAnalogSliderNode();
   createAnalogNode();
 
 })();

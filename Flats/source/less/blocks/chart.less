@@ -1,3 +1,19 @@
+.tooltipChart {
+  transition: all 0.1s;
+}
+.tooltipChart .body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tooltipChart .figure{
+  position: absolute;
+  top: 32px;
+  border: 12px solid transparent;
+  border-top: 15px solid #7be37b;
+}
+
 .chart__wrapper {
   .container();
   display: flex;
@@ -161,5 +177,17 @@
 
   .chart__description {
     margin-bottom: 60px;
+  }
+}
+
+@media (max-width:@tablet-width){
+  #myChart{
+    margin-left: -20px;
+  }
+
+  .tooltipChart .figure{
+    top: 20px;
+    border: 7px solid transparent;
+    border-top: 10px solid #7be37b;
   }
 }

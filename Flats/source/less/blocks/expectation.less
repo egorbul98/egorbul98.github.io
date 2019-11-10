@@ -21,6 +21,7 @@
 
 .expectation__item {
   position: relative;
+  cursor: pointer;
 }
 
 .expectation__item > img {
@@ -35,17 +36,21 @@
 
 .expectation__description-box {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 10px;
   font-weight: 400;
   line-height: 16px;
   padding: 10px;
   width: 100%;
-  background-color: transparent;
+  background: linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 100%);;
   color: @secondary-white;
+  height: 34px;
+
+  
 }
 
 .expectation__show-btn {
@@ -53,6 +58,10 @@
 }
 
 @media (min-width: @tablet-width) {
+  .expectation__description-box{
+    font-size: 14px;
+    height: 57px;
+  }
   .expectation__wrapper {
     padding: 0 30px 40px;
   }

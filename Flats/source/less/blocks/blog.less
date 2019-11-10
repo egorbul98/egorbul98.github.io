@@ -49,6 +49,7 @@
   line-height: 16px;
   margin-bottom: 15px;
   color: @primary-black;
+  transition: all 0.3s;
 }
 
 .blog__image {
@@ -66,6 +67,10 @@
   line-height: 32px;
   margin-bottom: 20px;
   color: @primary-black;
+}
+.blog__note.hidden {
+  display: none;
+  
 }
 
 @media (min-width: @tablet-width) {
@@ -139,7 +144,7 @@
   .blog__author-description {
     font-size: 15px;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 4px;
   }
 
   .blog__description {

@@ -90,7 +90,7 @@
   padding: 12px;
   text-align: center;
   border-radius: 22px;
-  background-color: #fff0f0;
+  background-color: #fff;
 }
 
 .mortgage__capital-text {
@@ -351,16 +351,22 @@
     position: relative;
     cursor: pointer;
     color: @secondary-red;
-    border: 2px solid transparent;
+    border: 2px solid @primary-grey;
   }
 
   &:checked+label {
     border-color: @primary-pink;
+    color: #030303;
   }
 
 }
 
 @media (min-width: @tablet-width) {
+  .mortgage__title-img{
+    .modal__img{
+      height: 320px;
+    }
+  }
   .mortgage__capital label {
     margin: auto;
   }
@@ -394,7 +400,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: @primary-pink;
+    border-color: @primary-grey;
   }
 
   .mortgage__capital-text {
@@ -404,13 +410,12 @@
 
   #mortgage-capital {
     &+label {
-      border: 4px solid @primary-pink;
+      border: 4px solid @primary-grey;
       color: black;
     }
 
     &:checked+label {
-      background-color: @light-pink;
-      color: @primary-pink;
+      color: #030303;
     }
   }
 
@@ -658,6 +663,15 @@
     }
   }
 
-
-
+}
+@media (max-height: 800px){
+  .mortgage__wrapper.modal__wrapper{
+    height: auto;
+  }
+}
+@media (max-height: 714px){
+  .mortgage__wrapper.modal__wrapper{
+    transform: translate(-50%, 0);
+    top: 0;
+  }
 }
