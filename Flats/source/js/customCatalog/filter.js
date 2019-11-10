@@ -293,9 +293,6 @@
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').off('click');
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').on('click', function () {
       if (!mapCreate && apiMapReady) {
-        console.log('mapCreate '+ mapCreate);
-        console.log('apiMapReady '+ apiMapReady);
-        
         ymaps.ready(initMap); //yandex maps
         mapCreate = true;
       }
@@ -317,6 +314,7 @@
 
 
     function showMapComplex() { //Открытие мини карты, при нажатии на кнопку у элемента
+      if (apiMapReady) {
         let $parentList = $(this).closest('.catalog-complex__list');
         $parentList.find('.item-map').attr('id', '');
         if ($(this).hasClass('map-active')) {
@@ -339,6 +337,7 @@
             mapComplexItem.destroy();
             mapComplexItem = null;
           }
+          
           mapComplexItem = new ymaps.Map('item-map', {
             center: coordsComplex, // Новосибирск
             zoom: 13,
@@ -356,7 +355,7 @@
         mapComplexItem.geoObjects.add(placemark);
       }
       updateSizeComplexItemMap();
-     
+    }
     }
 
     function updateComplexes(filterList) { //Обновляет список комплексов на странице
@@ -414,7 +413,6 @@
       $slider = $('.catalog-complex__slider');
       initSlidersComplexes($slider);
       $('.btn-phone').off('click');
-      console.log('sssswqdwq');
       $('.btn-phone').on('click', function () {
         $(this).children('.text').text($(this).attr('data-phone'));
       });
@@ -558,7 +556,6 @@
       let payment = $('.filter__payment').val().split(separator);
       let bank = $('.filter__bank').val().split(separator);
       let room = $('.filter__room').val().split(separator);
-      console.log(room);
       
       let costFrom = parseInt($('.filter__cost-from').val());
       let costTo = parseInt($('.filter__cost-to').val());
@@ -1131,7 +1128,6 @@
     //   }
     // });
     function clickFilterInput() {
-      console.log('click');
       
       $('.filter__form-inner').find('.filter__input').removeClass('filter__input--active-select');
       $('.map-filter__form-inner').find('.map-filter__input').removeClass('filter__input--active-select');
@@ -1228,7 +1224,7 @@
       );
       setTimeout(function () {
         apiMapReady = true;
-      }, 500);
+      }, 100);
       
     }, 2000);
     
