@@ -73,8 +73,6 @@
 
       });
     }
-//0-0-
-    console.log('1');
     
   $('body').append(
     `<script src="https://api-maps.yandex.ru/2.1/?apikey=3293948d-9c3b-41fc-bcb2-dd98ae79efcf&lang=ru_RU"
@@ -83,7 +81,7 @@
 
     //------------------
     
-      $('.lazy').lazyload();
+      
 
   });
 })();

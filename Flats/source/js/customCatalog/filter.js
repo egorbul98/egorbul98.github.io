@@ -402,7 +402,7 @@
         }
         return text_forms[2];
       }
-
+      
       $slider = $('.catalog-complex__slider');
       initSlidersComplexes($slider);
       $('.btn-phone').off('click');
@@ -419,6 +419,8 @@
       $('.catalog-complex__btn-show-map').on('click', showMapComplex);
       $('.filter__input').off('click');
       $('.filter__input').on('click', clickFilterInput);
+
+      $('.lazy').lazyload();
     }
 
     function getCloneList(complexList) { //Возвращает дубликат списка
