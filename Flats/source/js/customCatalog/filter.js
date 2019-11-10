@@ -93,6 +93,7 @@
     updateComplexes(complexList);
 
     let mapCreate = false;
+    let apiMapReady = false;
     
     function initMap() {
       mapComplex = new ymaps.Map('map', {
@@ -291,11 +292,15 @@
     }
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').off('click');
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').on('click', function () {
-      if (!mapCreate) {
+      if (!mapCreate && apiMapReady) {
+        console.log('mapCreate '+ mapCreate);
+        console.log('apiMapReady '+ apiMapReady);
+        
         ymaps.ready(initMap); //yandex maps
         mapCreate = true;
       }
-      $(window).scrollTop(0);
+      if (apiMapReady) {
+        $(window).scrollTop(0);
       $('.map-modal').scrollTop(0);
       $('.map-modal').addClass('map-modal--open');
       $('body').addClass('body--fixed');
@@ -305,6 +310,8 @@
       let filterList = getFilterListComplex(complexList, filter); //Возвращает отфильтрованный список комплексов (filter - объект, с которым будут сравниваться другие объекты)
 
       updateMapObjects(mapComplex, clusterer, filterList);
+      }
+      
       
     });
 
@@ -1214,6 +1221,16 @@
       }
     });
 
+    setTimeout(function () {
+      $('body').append(
+        `<script src="https://api-maps.yandex.ru/2.1/?apikey=3293948d-9c3b-41fc-bcb2-dd98ae79efcf&lang=ru_RU"
+        type="text/javascript" defer></script>`
+      );
+      setTimeout(function () {
+        apiMapReady = true;
+      }, 500);
+      
+    }, 2000);
     
   });
 })();
