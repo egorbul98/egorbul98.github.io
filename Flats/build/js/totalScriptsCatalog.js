@@ -92,7 +92,9 @@
     $('.count-complex').text(complexList.length);//Количество жилых комплексов
     
     updateComplexes(complexList);
-    ymaps.ready(initMap); //yandex maps
+
+    let mapCreate = false;
+    
     function initMap() {
       mapComplex = new ymaps.Map('map', {
         center: coordsCenter,
@@ -104,14 +106,7 @@
       });
       clusterer = new ymaps.Clusterer({
         preset: 'islands#invertedRedClusterIcons',
-        // clusterIcons: [{
-        //   // href: 'img/icons/bookmark-star.svg',
-        //   // size: [40, 40],
-        //   // offset: [-20, -20]
-        // }],
-        // clusterNumbers: [10],
         groupByCoordinates: false,
-        // clusterDisableClickZoom: true,
         clusterHideIconOnBalloonOpen: false,
         geoObjectHideIconOnBalloonOpen: false
       });
@@ -122,19 +117,7 @@
         .add('mouseleave', function (e) {
           e.get('target').options.set('preset', 'islands#invertedRedClusterIcons');
         });
-      getPointData = function (index, complex) {
-        return {
-          
-          balloonContentBody: '<div class="map-flat"><div class="map-flat__img"><img src="' + complex[index]
-          .img + '" alt="img"></div><div class="map-flat__info"><div class="map-flat__complex">'+complex[index].name+'</div><div class="map-flat__cost-square">' + complex[index].minCostSquare + ' тыс. - ' + complex[index].maxCostSquare + ' тыс. руб/м<sup>2</sup></div><div class="map-flat__cost">от ' +
-          Math.round(parseInt(complex[index].minCost))/1000000 + ' - до ' + Math.round(parseInt(complex[index].maxCost))/1000000 + ' млн. руб.</div></div></div>',
-          // balloonContentBody: '<div class="map-flat"><div class="map-flat__img"><img src="' + complex[index]
-          //   .img + '" alt="img"></div><div class="map-flat__info"><div class="map-flat__cost">' +
-          //   Math.round(parseInt(complex[index].minCost))/1000000 + ' руб. - ' + Math.round(parseInt(complex[index].maxCost))/1000000 + ' руб.</div><div class="map-flat__type"></div><div class="map-flat__complex"></div></div></div>',
-          // balloonContentFooter: '<div class="map-flat__address">' + complex[index].address + '</div>',
-          clusterCaption: complex[index].name
-        };
-      };
+      
       
       let geoObjects = getListPlacemarks(complexList);
 
@@ -219,9 +202,7 @@
           $('.map__complex-info').css('height', 'auto');
         }
         mapComplex.container.fitToViewport();
-
         updateSizeComplexItemMap();
-        
       });
 
     }
@@ -236,6 +217,15 @@
         }
       }
     }
+    let getPointData = function (index, complex) {
+      return {
+        
+        balloonContentBody: '<div class="map-flat"><div class="map-flat__img"><img src="' + complex[index]
+        .img + '" alt="img"></div><div class="map-flat__info"><div class="map-flat__complex">'+complex[index].name+'</div><div class="map-flat__cost-square">' + complex[index].minCostSquare + ' тыс. - ' + complex[index].maxCostSquare + ' тыс. руб/м<sup>2</sup></div><div class="map-flat__cost">от ' +
+        Math.round(parseInt(complex[index].minCost))/1000000 + ' - до ' + Math.round(parseInt(complex[index].maxCost))/1000000 + ' млн. руб.</div></div></div>',
+        clusterCaption: complex[index].name
+      };
+    };
     function getListPlacemarks(listPlacemarks) {
       let geoObjects = [];
       for (var i = 0, len = listPlacemarks.length; i < len; i++) {
@@ -291,13 +281,20 @@
 
     function updateMapObjects(map, cluster, filterList) { //Обновляет данные на карте по фильтру (filterList)
       let objects = getListPlacemarks(filterList);
-      cluster.removeAll();
-      cluster.add(objects);
-      map.geoObjects.removeAll();
-      map.geoObjects.add(clusterer);
+      if (cluster != undefined) {
+        cluster.removeAll();
+        cluster.add(objects);
+        map.geoObjects.removeAll();
+        map.geoObjects.add(cluster);
+      }
+      
     }
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').off('click');
     $('.filter__btn-show-map, .list-type__btn.list-type__btn-map, .list-character__btn-map').on('click', function () {
+      if (!mapCreate) {
+        ymaps.ready(initMap); //yandex maps
+        mapCreate = true;
+      }
       $(window).scrollTop(0);
       $('.map-modal').scrollTop(0);
       $('.map-modal').addClass('map-modal--open');
@@ -610,9 +607,9 @@
       str += '</div><div class="catalog-complex__slider">';
       for (let i = 0; i < infoList.images.length; i++) {
         const img = infoList.images[i];
-        str += '<div class="catalog-complex__slide"><img src="'+img+'" alt="img"><div class="catalog-complex__slide-icons"><span class="wrap-heart"><svg class="heart" viewBox="0 0 512 512"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg><svg  class="heart-fill hidden" viewBox="0 0 512 512"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg></span><img src="img/slide-build.svg" alt="img"></div></div>';
+        str += '<div class="catalog-complex__slide"><img class="lazy" src="'+img+'" alt="img"><div class="catalog-complex__slide-icons"><span class="wrap-heart"><svg class="heart" viewBox="0 0 512 512"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg><svg  class="heart-fill hidden" viewBox="0 0 512 512"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg></span><img src="img/slide-build.svg" alt="img"></div></div>';
       }
-      str += '</div><div class="catalog-complex__slider-counter"></div><div class="catalog-complex__buttons-wrap catalog-complex__item-header-buttons"><a href="detail.html" class="catalog-complex__btn-more pink__btn">Подробнее</a><button type="button" class="catalog-complex__btn-show-map pink__btn" data-id-complex="' + infoList.id + '"><img src="img/placeholder-red.svg" alt="">На карте</button></div><ul class="complex-advantages__features-list"><li class="complex-advantages__features-item complex-advantages__features-item--sale"><div class="complex-advantages__features-item-box"><svg width="13" height="14"><use xlink:href="#icon-feature_sale"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--sale">Скидка партнерам</span></li><li class="complex-advantages__features-item complex-advantages__features-item--deal"><div class="complex-advantages__features-item-box"><svg width="14" height="14"><use xlink:href="#icon-feature_deal"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--deal">Безопасная&nbsp;сделка</span></li><li class="complex-advantages__features-item complex-advantages__features-item--gift"><div class="complex-advantages__features-item-box"><svg width="13" height="10"><use xlink:href="#icon-feature_gift"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--gift">Приемка&nbsp;в&nbsp;подарок</span></li><li class="complex-advantages__features-item complex-advantages__features-item--decor"><div class="complex-advantages__features-item-box"><svg width="12" height="17"><use xlink:href="#icon-feature_decor"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--decor">Сертификат&nbsp;на&nbsp;отделку</span></li><li class="complex-advantages__features-item complex-advantages__features-item--conditions"><div class="complex-advantages__features-item-box"><svg width="18" height="13"><use xlink:href="#icon-bus"></use></svg></div> <span class="complex-advantages__features-hint complex-advantages__features-hint--gift">Специальные&nbsp;условия для&nbsp;иногородних</span></li></ul></div><div class="catalog-complex__item-content" ><div class="inner">';
+      str += '</div><div class="catalog-complex__slider-counter"></div><div class="catalog-complex__buttons-wrap catalog-complex__item-header-buttons"><a href="detail.html" class="catalog-complex__btn-more pink__btn">Подробнее</a><button type="button" class="catalog-complex__btn-show-map pink__btn" data-id-complex="' + infoList.id + '"><img class="lazy" src="img/placeholder-red.svg" alt="">На карте</button></div><ul class="complex-advantages__features-list"><li class="complex-advantages__features-item complex-advantages__features-item--sale"><div class="complex-advantages__features-item-box"><svg width="13" height="14"><use xlink:href="#icon-feature_sale"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--sale">Скидка партнерам</span></li><li class="complex-advantages__features-item complex-advantages__features-item--deal"><div class="complex-advantages__features-item-box"><svg width="14" height="14"><use xlink:href="#icon-feature_deal"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--deal">Безопасная&nbsp;сделка</span></li><li class="complex-advantages__features-item complex-advantages__features-item--gift"><div class="complex-advantages__features-item-box"><svg width="13" height="10"><use xlink:href="#icon-feature_gift"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--gift">Приемка&nbsp;в&nbsp;подарок</span></li><li class="complex-advantages__features-item complex-advantages__features-item--decor"><div class="complex-advantages__features-item-box"><svg width="12" height="17"><use xlink:href="#icon-feature_decor"></use></svg></div><span class="complex-advantages__features-hint complex-advantages__features-hint--decor">Сертификат&nbsp;на&nbsp;отделку</span></li><li class="complex-advantages__features-item complex-advantages__features-item--conditions"><div class="complex-advantages__features-item-box"><svg width="18" height="13"><use xlink:href="#icon-bus"></use></svg></div> <span class="complex-advantages__features-hint complex-advantages__features-hint--gift">Специальные&nbsp;условия для&nbsp;иногородних</span></li></ul></div><div class="catalog-complex__item-content" ><div class="inner">';
       let costSquare = getCostSquare(infoList.flats);
       let minCost = Math.round(parseInt(infoList.minCost) / 1000000);
       let maxCost = Math.round(parseInt(infoList.maxCost) / 1000000);
@@ -1299,6 +1296,10 @@
       });
     }
 
+    //------------------
+    
+   
+      $('.lazy').lazyload();
 
   });
 })();

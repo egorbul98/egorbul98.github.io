@@ -699,76 +699,48 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer__wrapper">
-      <div class="footer__box">
-        <div class="footer__search">
-          <form class="footer__search-form">
-            <input type="text" class="footer__search-input" placeholder="Поиск по базе">
-            <button type="button" class="footer__search-btn"><span class="visually-hidden">найти</span></button>
+  <footer class="catalog-footer">
+    <div class="catalog-wrapper">
+      <div class="catalog-footer__wrap">
+        <div class="catalog-footer__item buildings">
+          <h4 class="catalog-footer__item-title">Новостройки</h4>
+          <div class="buildings__item catalog-footer__text"><a href="#">В Санкт-Петербурге</a></div>
+          <div class="buildings__item catalog-footer__text"><a href="#">В Ленинградской области</a></div>
+          <div class="buildings__item catalog-footer__text"><a href="#">В Москве</a></div>
+          <div class="buildings__item catalog-footer__text"><a href="#">В Московской области</a></div>
+          <div class="buildings__show-map catalog-footer__text"><a href="">Новостройки на карте</a></div>
+        </div>
+        <div class="catalog-footer__item popular">
+          <h4 class="catalog-footer__item-title">Популярное</h4>
+          <div class="popular__item catalog-footer__text"><a href="#">До 3 миллионов</a></div>
+          <div class="popular__item catalog-footer__text"><a href="#">До 4 миллионов</a></div>
+          <div class="popular__item catalog-footer__text"><a href="#">До 5 миллионов</a></div>
+        </div>
+        <div class="catalog-footer__item different">
+          <div class="different__sales catalog-footer__text"><a href="">Старты продаж новостроек</a></div>
+          <div class="different__other other">
+            <div class="other__item catalog-footer__text other__video"><a href="#">Видеобзоры ЖК</a></div>
+            <div class="other__item catalog-footer__text other__item--width"><a href="#">Новости</a></div>
+            <div class="other__item catalog-footer__text other__item--width"><a href="#">Статьи</a></div>
+          </div>
+
+        </div>
+        <div class="catalog-footer__item social">
+          <form action="" class="form-search">
+            <div class="form-search__field">
+              <input type="search" class="form-search__input" placeholder="Поиск по базе">
+              <button type='submit' class="btn-search"><img src="img/icon-search.svg" alt=""></button>
+            </div>
           </form>
-        </div>
 
-        <div class="footer__logo scrollLink">
-          <a href="#main-header" class="footer__logo-link">
-            PRONovostroyki.com
-          </a>
-        </div>
-        <div class="footer__social">
-          <ul class="footer__social-list">
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link"><img src="img/logo_vk.png" width="50" height="50"
-                  alt="ВКонтакте"></a>
-            </li>
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link"><img src="img/logo_youtube.png" width="50" height="50"
-                  alt="YouTube"></a>
-            </li>
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link"><img src="img/logo_instagram.png" width="50" height="50"
-                  alt="Instagram"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <div class="social__site">PRONovostroyki.com</div>
 
-      <div class="footer__info-wrapper">
-        <div class="footer__info-container">
-          <div class="footer__info-buildings buildings">
-            <div class="buildings__wrapper">
-              <h3 class="buildings__title">Новостройки</h3>
-              <ul class="buildings__list">
-                <li class="buildings__item"><a href="#" class="buildings__item-link">В Санкт-Петербурге</a></li>
-                <li class="buildings__item"><a href="#" class="buildings__item-link">В Ленинградской области</a></li>
-                <li class="buildings__item"><a href="#" class="buildings__item-link">В Москве</a></li>
-                <li class="buildings__item"><a href="#" class="buildings__item-link">В Московской области</a></li>
-              </ul>
-            </div>
+          <div class="social__list">
+            <div class="social__item"><a href="#"><img src="img/logo_vk.png" alt=""></a></div>
+            <div class="social__item"><a href="#"><img src="img/logo_youtube.png" alt=""></a></div>
+            <div class="social__item"><a href="#"><img src="img/logo_instagram.png" alt=""></a></div>
           </div>
 
-          <div class="footer__info-catalog price">
-            <div class="price__wrapper">
-              <h3 class="price__title">Популярное</h3>
-              <ul class="price__list">
-                <li class="price__item"><a href="#" class="price__item-link">До 3 миллионов</a></li>
-                <li class="price__item"><a href="#" class="price__item-link">До 4 миллионов</a></li>
-                <li class="price__item"><a href="#" class="price__item-link">До 5 миллионов</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer__info-news news">
-          <div class="news__wrapper">
-            <div class="news__box">
-              <a href="#" class="news__link">Новостройки на карте</a>
-              <a href="#" class="news__link">Видеообзоры ЖК</a>
-            </div>
-            <div class="news__box">
-              <a href="#" class="news__link">Старты продаж новостроек</a>
-              <a href="#" class="news__link">Новости</a>
-              <a href="#" class="news__link">Статьи</a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1293,7 +1265,9 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=3293948d-9c3b-41fc-bcb2-dd98ae79efcf&lang=ru_RU"
     type="text/javascript"></script>
+  <script src="js/lazyload.min.js"></script>
   <script src="js/totalScriptsCatalog.js"></script>
+  
 
 
 </body>
