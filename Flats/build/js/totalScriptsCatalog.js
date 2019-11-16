@@ -174,7 +174,7 @@
         }
       });
 
-      let height = ($(window).height() - 50 - 80 +1);//нужная высота
+      let height = ($(window).height() - 50 - 80 +1 - 21);//нужная высота
       
       if ($(window).width() <= 768) {
         $('#map').css('height', height + 'px');
