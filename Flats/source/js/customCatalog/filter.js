@@ -177,7 +177,7 @@
       
       if ($(window).width() <= 768) {
         $('#map').css('height', height + 'px');
-        $('.map-filter').css('height', height + 'px');
+        $('.map-filter').css('height', (height + 21) + 'px');
         $('.map__complex-info').css('height', (height+50)+ 'px');
         mapComplex.container.fitToViewport();
       } else {
@@ -192,7 +192,7 @@
         if ($(window).width() <= 768) {
           height = ($(window).height() - 50 - 80 +1 - 21);
           $('#map').css('height', height + 'px');
-          $('.map-filter').css('height', height + 'px');
+          $('.map-filter').css('height', (height + 21) + 'px');
           $('.map__complex-info').css('height', (height+50)+ 'px');
         } else {
           console.log('auto');
