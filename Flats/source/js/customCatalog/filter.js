@@ -182,9 +182,9 @@
         mapComplex.container.fitToViewport();
       } else {
         
-        // $('#map').css('height', 700+'px');
         $('#map').css('height',$('.map-wrapper').height());
-        $('.map-filter').css('height', 'auto');
+        // $('.map-filter').css('height', 'auto');
+        $('.map-filter').css('height', '1025px');
         $('.map__complex-info').css('height', 'auto');
         mapComplex.container.fitToViewport();
       }
@@ -195,9 +195,11 @@
           $('.map-filter').css('height', height + 'px');
           $('.map__complex-info').css('height', (height+50)+ 'px');
         } else {
-          // $('#map').css('height', 700+'px');
+          console.log('auto');
+          
           $('#map').css('height',$('.map-wrapper').height());
-          $('.map-filter').css('height', 'auto');
+          // $('.map-filter').css('height', 'auto');
+          $('.map-filter').css('height', '1025px');
           $('.map__complex-info').css('height', 'auto');
         }
         mapComplex.container.fitToViewport();
