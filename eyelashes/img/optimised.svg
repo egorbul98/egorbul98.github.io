@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 524 81">
+  <defs>
+    <style>
+      
+        .cls-1,
+        .cls-2,
+        .cls-3 {
+          fill: none;
+          stroke-miterlimit: 10;
+        }
+
+        .cls-1 {
+          stroke: red;
+        }
+
+        .cls-2 {
+          stroke: blue;
+        }
+
+        .cls-3 {
+          stroke: #000;
+        }
+      
+    </style>
+  </defs>
+  <title>
+    Ресурс 1
+  </title>
+  <g id="Слой_2" data-name="Слой 2">
+    <g id="Слой_1-2" data-name="Слой 1">
+      <line class="cls-1" x1="40.5" y1="40.5" x2="483" y2="40.5"/>
+      <circle class="cls-2" cx="40.5" cy="40.5" r="40"/>
+      <circle class="cls-3" cx="186.5" cy="40.5" r="40"/>
+      <circle class="cls-3" cx="326.5" cy="40.5" r="40"/>
+      <circle class="cls-3" cx="483.5" cy="40.5" r="40"/>
+    </g>
+  </g>
+</svg>
