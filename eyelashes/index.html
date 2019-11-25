@@ -5,45 +5,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/slick-lightbox.css">
+  <link rel="stylesheet" href="css/slick.css">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css">
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400,400i,600,600i,700,700i&display=swap"
     rel="stylesheet">
 
 
 
 
-  <title>Document</title>
+  <title>n'sil</title>
 </head>
 
 <body>
-<!-- <img src="img/1.svg" alt=""> -->
-<!-- <img src="img/bg-image.svg" alt=""> -->
+  <!-- <style>
+    .block{
+      background-color: red;
+      animation: skew 1.2s 2s forwards;
+      width: 300px;
+      height: 200px;
+      visibility: hidden;
+    }
+    @keyframes skew {
+      0% {
+        visibility: visible;
+        transform: skew(-25deg) scale(0.02, 0);
+      }
+
+      60% {
+        visibility: visible;
+        transform: skew(-25deg) scale(0.02, 1);
+      }
+
+      100% {
+        visibility: visible;
+        transform: skew(-25deg) scale(1);
+      }
+    }
+  </style>
+<div class="block"> -->
+
+  </div>
+  <div class="preloader">
+    <div class="preloader__content">
+      <span class="percent">0</span>%
+    </div>
+  </div>
+  <!-- <img src="img/1.svg" alt=""> -->
+  <!-- <img src="img/bg-image.svg" alt=""> -->
+  <div class="main-bg">
+    <div class="main-bg__inner">
+      <img class="eyes" src="img/bg-image.svg" alt="eyes">
+      <!-- <div class="ss"></div> -->
+    </div>
+  </div>
+
   <header class="header">
     <div class="wrapper">
       <div class="header-title__wrap">
         <div class="header__img">
-            <img src="img/eyes.svg" alt="">
+          <img src="img/eyes.svg" alt="">
         </div>
-          <h1 class="header-title">n'sil<span class="text">Your eyelashes</span></h1>
+        <h1 class="header-title">n'sil<span class="text">Your eyelashes</span></h1>
       </div>
-     
+
       <div class="main-box">
         <nav class="nav-main">
-            <button class="nav-btn-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+          <button class="nav-btn-toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
           <ul class="nav">
             <li id="galery" class="nav__item"><a href="#">Мои работы</a></li>
             <li id="reviews" class="nav__item"><a href="#">Отзывы</a></li>
             <li id="contacts" class="nav__item"><a href="#">Контакты</a></li>
             <!-- <li id="contacts" class="nav__item"><a href="#">Контакты</a></li> -->
           </ul>
-          
+
         </nav>
         <div class="header-description">
-          <p class="header-description__paragraph header-description__title">Записывайтесь на наращивание, и ваши реснички станут пышными и объемными.</p>
-          <p class="header-description__paragraph"> Наращивание позволяет нарастить и верхние, и нижние реснички до желаемой длины, сделав их пышными и
+          <p class="header-description__paragraph header-description__title">Записывайтесь на наращивание, и ваши
+            реснички станут пышными и объемными.</p>
+          <p class="header-description__paragraph"> Наращивание позволяет нарастить и верхние, и нижние реснички до
+            желаемой длины, сделав их пышными и
             объемными. Применяются современные безопасные технологии — полное и неполное наращивание, 2d, 3d и 4d. Они
             позволяют получить кошачий, лисий, беличий взгляд, или сделать реснички максимально натуральными и
             естественными, придав дополнительную пышность и объем. Записывайтесь по телефону.</p>
@@ -52,12 +99,6 @@
 
     </div>
   </header>
-  <div class="main-eyes">
-    <div class="main-eyes__inner">
-      <img class="eyes" src="img/bg-image.svg" alt="eyes">
-      <!-- <div class="ss"></div> -->
-    </div>
-  </div> 
 
 
 
@@ -68,53 +109,41 @@
         <h2 class="galery-title content-box__title">Мои работы</h2>
         <div class="galery-list">
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
           <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
+            <a href="img/image.png" data-caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, optio!">
+              <img src="img/image.png" alt="image">
+            </a>
           </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
-          <div class="galery-list__item">
-            <img src="img/image.png" alt="image">
-          </div>
+          
         </div>
       </div>
     </div>
@@ -279,11 +308,10 @@
   </div>
 
 
-
   <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/jquery.easing-1.3.pack.js"></script>
-  <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
-  <script src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/slick-lightbox.js"></script>
+
   <script src="js/script.js"></script>
 
 
