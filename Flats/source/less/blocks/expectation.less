@@ -1,3 +1,6 @@
+.expectation{
+  text-align: center
+}
 .expectation__wrapper {
   .container();
   padding: 0 20px 60px;
@@ -124,4 +127,11 @@
   .expectation__show-btn {
     display: block;
   }
+}
+@media (max-width: @tablet-width) {
+  .expectation__wrapper {
+    max-width: 360px;
+    width: 100%;
+  }
+  
 }

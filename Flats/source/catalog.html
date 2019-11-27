@@ -693,6 +693,128 @@
     </div>
   </section>
 
+  <section class="review" id="videoReview">
+    <div class="review__wrapper">
+      <h2 class="review__title">Видеообзоры</h2>
+    </div>
+    <div class="wrapper">
+      <div class="video-slider">
+        <!------------ Блок с видеороликом ------------>
+        <div class="video-slider__item slide">
+          <div class="wrapper-player">
+            <div id="player0" class="content slide__video"></div>
+          </div>
+          <button class="btn-pause"><img src="img/btn-pause.svg" alt="play"></button>
+          <div class="content slide__img">
+            <img src="img/img-video-1.jpg">
+            <button class="btn-play" type="button"><img src="img/btn-play.svg" alt="play"></button>
+          </div>
+        </div>
+        <!-------------------------------------------->
+
+        <div class="video-slider__item slide">
+          <div class="wrapper-player">
+            <div id="player1" class="content slide__video"></div>
+          </div>
+          <button class="btn-pause"><img src="img/btn-pause.svg" alt="play"></button>
+          <div class="content slide__img">
+            <img src="img/img-video-2.jpg">
+            <button class="btn-play" type="button"><img src="img/btn-play.svg" alt="play"></button>
+          </div>
+        </div>
+
+        <div class="video-slider__item slide">
+          <div class="wrapper-player">
+            <div id="player2" class="content slide__video"></div>
+          </div>
+          <button class="btn-pause"><img src="img/btn-pause.svg" alt="play"></button>
+          <div class="content slide__img">
+            <img src="img/img-video-3.jpg">
+            <button class="btn-play" type="button"><img src="img/btn-play.svg" alt="play"></button>
+          </div>
+        </div>
+
+        <div class="video-slider__item slide">
+          <div class="wrapper-player">
+            <div id="player3" class="content slide__video"></div>
+          </div>
+          <button class="btn-pause"><img src="img/btn-pause.svg" alt="play"></button>
+          <div class="content slide__img">
+            <img src="img/img-video-4.jpg">
+            <button class="btn-play btn-start" type="button"><img src="img/btn-play.svg" alt="play"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="expectation">
+    <button type="button" id='btnOpenExcursionModal' class="expectation__btn pink__btn">Записаться на
+      экскурсию</button>
+  </div>
+
+  <section class="chart">
+    <div class="chart__wrapper">
+
+      <div class="chart__box">
+        <h2 class="chart__title">Изменение цен за 1 м2 (тыс. руб)</h2>
+        <div class="chart__button-box">
+          <button type="button" class="chart__btn chart__btn--studio" data-item='studio'>Студия</button>
+          <button type="button" class="chart__btn" data-item='1'>1</button>
+          <button type="button" class="chart__btn chart__btn--active" data-item='2'>2</button>
+          <button type="button" class="chart__btn" data-item='3'>3</button>
+          <button type="button" class="chart__btn" data-item='4'>4</button>
+          <button type="button" class="chart__btn" data-item='5'>5+</button>
+        </div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="chart__description-box">
+        <b class="chart__note">Проведена проверка экспертами</b>
+        <div class="chart__description">
+          Специалисты исследовали ЖК “Северные высоты”: сравнили обещания застройщика с реальностью, проверили договор
+          ДДУ,
+          собрали статистику по динамике цен, метражу и другим параметрам.
+        </div>
+        <button type="button" class="chart__description-btn light__btn">Смотреть отчет</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="credit" id="credit">
+    <div class="credit__wrapper">
+      <h2 class="credit__title">Ипотека от банков</h2>
+
+      <div class="credit__calculator calculator">
+        <div class="calculator__wrapper">
+          <h2 class="calculator__title">Калькулятор</h2>
+          <small class="calculator__description">Введите параметры для расчета ежемесячного платежа</small>
+
+          <form action="" method="" class="calculator__form">
+            <div class="calculator__form-box">
+              <label for="contribution" class="calculator__form-label">Сумма кредита</label>
+              <input type="text" id="contribution" placeholder="руб." value="">
+            </div>
+            <div class="calculator__form-box">
+              <label for="rate" class="calculator__form-label">Ставка</label>
+              <input type="text" id="rate" placeholder="%" value="">
+            </div>
+            <div class="calculator__form-box">
+              <label for="time" class="calculator__form-label">Срок</label>
+              <input type="text" id="time" class='inputTi' placeholder="Кол-во лет" value="">
+            </div>
+          </form>
+
+          <p class="calculator__text">Ваш ежемесячный платеж составит:<b class="calculator__result">0 руб.</b>
+          </p>
+          <button type="submit" id='btnOpenMortgage' class="calculator__btn pink__btn openModal__btn">Подать заявки во
+            все банки</button>
+        </div>
+      </div>
+
+
+  </section>
+
   <section class="advice-box">
     <div class="catalog-wrapper">
       <h3 class="advice-box__title">Смотрите полезные советы</h3>
@@ -739,9 +861,12 @@
           <div class="social__site">PRONovostroyki.com</div>
 
           <div class="social__list">
-            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_vk.png" src="img/content-item-img.png" alt=""></a></div>
-            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_youtube.png" src="img/content-item-img.png" alt=""></a></div>
-            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_instagram.png" src="img/content-item-img.png" alt=""></a></div>
+            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_vk.png"
+                  src="img/content-item-img.png" alt=""></a></div>
+            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_youtube.png"
+                  src="img/content-item-img.png" alt=""></a></div>
+            <div class="social__item"><a href="#"><img class='lazy' data-src="img/logo_instagram.png"
+                  src="img/content-item-img.png" alt=""></a></div>
           </div>
 
         </div>
@@ -1267,6 +1392,223 @@
       </div>
     </div>
   </section>
+
+
+
+  <section class="mortgage mortgage__modal modal modal--closed">
+    <div class="mortgage__wrapper modal__wrapper">
+      <header class="modal__header">
+        <button type='button' class="modal__header-btn-close">&#10006;</button>
+        <a href="index.html"><img class="modal__logo" src="img/logo.svg" width="80" height="46" alt="Логотип"></a>
+        <div class="modal__estate">
+          <div class="mortgage__title-img">
+            <picture>
+              <source type="image/webp" srcset="img/devSlider-img1.webp">
+
+              <img class="modal__img" src="img/devSlider-img1.jpg" alt="фотография ЖК" width="320" height="220">
+            </picture>
+            <div class="mortgage__title-wrapper">
+              <h2 class="modal__title">ЖК «Северные высоты»</h2>
+            </div>
+
+          </div>
+
+          <div class="modal__description-box">
+            <address class="modal__address">
+              <p class="modal__address-metro">Беговая, 21 мин. пешком</p>
+              <p class="modal__address-street">Приморский район, Мебельная улица, 19к2</p>
+            </address>
+            <div class="modal__info">
+              <p class="modal__info-name">ООО «Инвест-Строй»</p>
+              <span class="modal__info-divider"></span>
+              <p class="modal__info-type">Под ключ</p>
+              <a href="tel:8(800)1234556" class="modal__info-phone"><b>8 (800) 123 45 56</b></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="modal__title-box">
+        <h3 class="modal__title">Подать заявки во все банки</h3>
+        <button type='button' class="modal__close-btn"><img src="img/modal-close.svg" alt=""></button>
+      </div>
+
+      <div class="modal__content mortgage">
+        <form action="#" method="#" class="mortgage__form">
+          <div class="mortgage__income">
+            <label for="mortgage-income" class="mortgage__label">Месячный доход семьи</label>
+            <div class="mortgage-field-wrapper">
+              <div class="mortgage-field">
+                <input class="mortgage__income-input" type="text" name="mortgage-income" id="mortgage-income"
+                  placeholder="50 000" value="50000">
+                <input type="range" id='mortgage__income-range' class="mortgage__range" min="35000" max="100000"
+                  value="50000" step="1000">
+              </div>
+              <span class="mortgage-field__val mortgage-income__rub">руб.</span>
+              <div class="mortgage-field-pins pins">
+                <div class="pins__item">35 000</div>
+                <div class="pins__item">50 000</div>
+                <div class="pins__item">65 000</div>
+                <div class="pins__item">80 000</div>
+                <div class="pins__item">100 000</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="mortgage__work">
+            <label for="mortgage-work" class="mortgage__label">Общий трудовой стаж</label>
+            <div class="mortgage-field-wrapper">
+              <div class="mortgage-field">
+                <input class="mortgage__work-input " type="text" name="mortgage-work" id="mortgage-work" placeholder="2"
+                  value="2">
+                <input type="range" id='mortgage__work-range' class="mortgage__range" min="1" max="15" value="2">
+              </div>
+              <span class="mortgage-field__val mortgage-work__year">год</span>
+              <div class="mortgage-field-pins pins">
+                <div class="pins__item">1</div>
+                <div class="pins__item">3</div>
+                <div class="pins__item">5</div>
+                <div class="pins__item">7</div>
+                <div class="pins__item">9</div>
+                <div class="pins__item">11</div>
+                <div class="pins__item">13</div>
+                <div class="pins__item">15</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="mortgage__payment">
+            <label for="mortgage-payment" class="mortgage__label">Первоначальный взнос</label>
+            <div class="mortgage-field-wrapper">
+              <div class="mortgage-field">
+                <input class="mortgage__payment-input" type="text" name="mortgage-payment" id="mortgage-payment"
+                  placeholder="500 000" value="500000">
+              </div>
+              <span class="mortgage-field__val mortgage-payment__rub">руб.</span>
+            </div>
+          </div>
+
+          <div class="mortgage__capital">
+            <p class="mortgage__capital-text">Наличие материнского капитала и субсидий</p>
+            <div class="mortgage__capital-inner">
+              <input type="checkbox" id="mortgage-capital"></input>
+              <label for="mortgage-capital">Да</label>
+            </div>
+          </div>
+          <div class="mortgage-footer">
+            <div class="mortgage-chance-wrapper">
+              <div class="mortgage__chance">
+                <p class="mortgage__expectancy">Вероятность одобрения:</p>
+                <span class="mortgage__expectancy-value"><span class="mortgage__expectancy-value-wrap">65</span><span
+                    class="mortgage__expectancy-percent">%</span></span>
+              </div>
+
+              <div class="mortgage__info">
+                <input type="text" required placeholder="Ваше имя"></input>
+                <input type="text" required placeholder="Ваш номер телефона"></input>
+              </div>
+            </div>
+
+            <div class="mortgage__info-box">
+              <b class="mortgage__security">Мы не передаем Ваши данные третьим лицам</b>
+              <small class="mortgage__form-invalid">Вы не заполнили поля «имя», «телефон»</small>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <button type="submit" class="modal__btn pink__btn">Отправить</button>
+
+    </div>
+  </section>
+
+  <section class="excursion excursion__modal modal modal--closed">
+
+    <div class="excursion__wrapper modal__wrapper">
+      <header class="modal__header">
+        <button type='button' class="modal__header-btn-close">&#10006;</button>
+        <a href="index.html"><img class="modal__logo" src="img/logo.svg" width="80" height="46" alt="Логотип"></a>
+        <div class="modal__estate">
+          <div class="modal-header__title-img">
+            <picture>
+              <source type="image/webp" srcset="img/devSlider-img1.webp">
+
+              <img class="modal__img" src="img/devSlider-img1.jpg" alt="фотография ЖК" width="320" height="220">
+            </picture>
+            <div class="modal-header__title-wrapper">
+              <h2 class="modal__title">ЖК «Северные высоты»</h2>
+            </div>
+          </div>
+
+          <div class="modal__description-box">
+            <address class="modal__address">
+              <p class="modal__address-metro">Беговая, 21 мин. пешком</p>
+              <p class="modal__address-street">Приморский район, Мебельная улица, 19к2</p>
+            </address>
+            <div class="modal__info">
+              <p class="modal__info-name">ООО «Инвест-Строй»</p>
+              <span class="modal__info-divider"></span>
+              <p class="modal__info-type">Под ключ</p>
+              <a href="tel:8(800)1234556" class="modal__info-phone"><b>8 (800) 123 45 56</b></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="modal__title-box">
+        <h3 class="modal__title">Записаться на экскурсию</h3>
+        <button type="button" class="modal-close-btn">
+          <img class='modal__close-img' src="img/modal-close.svg" alt="закрыть">
+        </button>
+      </div>
+
+      <p class="modal__text">Выберите удобную дату и время</p>
+
+      <div class="modal__content">
+        <div class="modal__content-left ">
+          <div id="hasDatepicker">
+          </div>
+
+          <div class="excursion-field">
+            <div class="excursion__select-arrow">
+              <img src="img/arrow__down-input.svg">
+            </div>
+            <select class='excursion__select-time' name="" id="excursion__select-time">
+              <option value="9">9:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+              <option selected value="13">13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+              <option value="17">17:00</option>
+              <option value="18">18:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal__content-right">
+          <form method="#" action="#" class="consultation__form">
+            <div class="consultation__form-fields">
+              <input class="excursion__form-input" type="text" placeholder="Ваше имя">
+              <input class="excursion__form-input" type="text" placeholder="Ваш номер телефона">
+            </div>
+            <div class="date-info">
+              <span class="date">19.09</span>
+              <span class="time">13:00</span>
+            </div>
+
+            <input type="submit" class="modal__btn pink__btn" value="Записаться">
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/lazyload.min.js"></script>
   <script src="js/totalScriptsCatalog.js"></script>

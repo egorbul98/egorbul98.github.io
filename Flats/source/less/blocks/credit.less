@@ -1,5 +1,7 @@
 .credit__wrapper {
   .container();
+  max-width: 100%;
+  width: 100%;
   padding: 0 10px;
   padding-bottom: 10px;
 }
@@ -62,6 +64,7 @@
   }
 }
 
+
 @media(min-width: @desktop-width) {
   .credit__title {
     font-size: 22px;
@@ -91,6 +94,18 @@
     }
   }
 }
+@media(max-width: @tablet-width) {
+  .credit__wrapper {
+    max-width: 360px;
+  }
+  .pink__btn{
+    max-width: 320px;
+    display: block;
+    width: 100%;
+  }
+  
+}
+
 
 /*.credit {
   .container();

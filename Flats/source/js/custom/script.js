@@ -114,9 +114,6 @@ $(document).ready(function () {
 
 
 (function () {
-
-
-
   var WIDTH = 1360;
 $(document).ready(function () {
   if ($(window).width() >= 1360) {

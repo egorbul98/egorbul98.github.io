@@ -2,11 +2,10 @@
 (function () {
   let catalogComplexSection = $('.catalog-complex-box').offset().top;
   $(document).ready(function () {
-    
-    $(window).bind('scroll', function () {
-      if ($(this).scrollTop() >= catalogComplexSection) {
+    function initSlickAdvice() {
+      if ( $(window).scrollTop() >= catalogComplexSection) {
         //ДОБАВЛЕНИЕ СЛАЙДОВ В СЛАЙДЕР
-        console.log('ssss');
+      
         
         let $slider = $('.advice-slider');
         let slides = '';
@@ -47,9 +46,10 @@
           ]
         });
         
-        $(this).unbind('scroll');
+        $(window).unbind('scroll', initSlickAdvice);
       }
-    });
+    }
+    $(window).bind('scroll', initSlickAdvice);
   });
 
 
