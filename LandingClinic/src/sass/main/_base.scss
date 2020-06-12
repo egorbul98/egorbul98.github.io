@@ -17,7 +17,6 @@ html, body{
 
 body{
   background-color: $col-bg-main;
-  padding-bottom: 200px;
 }
 .main-wrap{
   max-width: 1310px;
@@ -43,6 +42,13 @@ h2.title{
 
   @include media-max($LM){
     font-size: 40px;
+  }
+}
+h3.title{
+  font-size: 30px;
+
+  @include media-max($LM){
+    font-size: 27px;
   }
 }
 h4.title{
@@ -131,4 +137,36 @@ p{
 
 .br{
   display: block;
+}
+
+.input{
+  padding-left: 26px;
+  padding-right: 20px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 6px;
+  width: 100%;
+  color: $col-input;
+  overflow: hidden;
+
+  &::placeholder {
+    color: $col-input;
+  }
+}
+.btn-submit{
+  border: none;
+  outline: none;
+  background-color: $pink;
+  font-size: 20px;
+  padding-bottom: 4px;
+  padding-left: 36px;
+  padding-right: 36px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: bold;
 }

@@ -1,0 +1,56 @@
+.footer {
+  background-color: $green;
+  height: 486px;
+  width: 100%;
+  position: relative;
+  margin-top: -83px;
+  z-index: -1;
+
+  .img-1 {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+  }
+
+  .img-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .img-white {
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .img-white-inner {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+
+      h6.title {
+        color: #D41B6C;
+        max-width: 180px;
+        margin-left: 14px;
+        font-family: $font-b;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      .img img {
+        height: 85px;
+        width: 85px;
+      }
+    }
+  }
+}

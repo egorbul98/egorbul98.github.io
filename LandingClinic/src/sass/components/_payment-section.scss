@@ -1,0 +1,41 @@
+.payment-section {
+  margin-top: 94px;
+
+  h2.title{
+    text-align: center;
+  }
+  .payment-section-inner {
+    max-width: 666px;
+    margin: auto;
+  }
+
+  .desc {
+    text-align: justify;
+    text-align-last: center;
+    margin-top: 53px;
+  }
+
+  .spec {
+    font-family: $font-b;
+  }
+
+  .img-wrap {
+    height: 370px;
+    width: 590px;
+    background-color: #fff;
+    border-radius: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 84px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    .icon {
+      position: absolute;
+      left: 50%;
+      top: -39px;
+      transform: translateX(-50%);
+    }
+  }
+}
