@@ -6,83 +6,179 @@
   }
 
   .stages {
-    margin-top: 49px;
+    margin-top: 86px;
     padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .stage {
+    margin-top: 144px;
+    width: 100%;
+    &:first-child{
+      margin-top: 0;
+    }
     &.stage-first {
-      .list {
+      max-width: 490px;
+      .stage-info .list {
         margin-top: 30px;
       }
     }
+    &.stage-second {
+      max-width: 559px;
+      .stage-info p{
+        margin-bottom: 34px;
 
-  }
-}
-
-.stage-header {
-  display: flex;
-  margin-bottom: 34px;
-  align-items: center;
-
-  &__title {
-    text-align: left;
-    padding-left: 22px;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  &__icon {
-    flex-shrink: 0;
-    position: relative;
-
-    .num {
-      width: 58px;
-      height: 58px;
-      background-color: $green;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      color: #ffffff;
-      font-family: $font-b;
-      font-size: 25px;
-      position: absolute;
-      z-index: -1;
-      right: 42%;
-      bottom: 58%;
-      padding-bottom: 4px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
     }
+    &.stage-third {
+      max-width: 586px;
+      margin-top: -34px;
+    }
+    &.stage-fourth {
+      max-width: 559px;
+    }
+    &.stage-fifth {
+      margin-top: 47px;
+      max-width: 546px;
 
-    .icon {
-      width: 48px;
-      height: 48px;
-      background-color: $pink;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      color: #ffffff;
-      font-family: $font-b;
-      font-size: 25px;
+      .stage-info .list-item {
+        margin-bottom: 18px;
+      }
+    }
+    &.stage-sixth {
+      max-width: 559px;
+      .stage-info p{
+        margin-bottom: 24px;
 
-      // margin-left: auto;
-      // margin-top: -22px;
-      img {
-        width: 24px;
+        &:last-child{
+          margin-bottom: 0;
+        }
       }
     }
 
-  }
 
-}
+    .stage-info {
+      padding-left: 70px;
+    
+      .list {
+        
+        .list-item::before {
+          margin-right: 14px;
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
 
-.stage-info {
-  padding-left: 70px;
-
-  .list {
-    .list-item::before {
-      margin-right: 14px;
+    .stage-info-footer{
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      .old-price{
+        color: $pink;
+        font-size: 28px;
+        font-family: $font-m;
+        position: relative;
+        letter-spacing: -1px;
+        &::after{
+          position: absolute;
+          top: 52%;
+          left: -5px;
+          content: '';
+          display: flex;
+          width: 100%;
+          min-width: 162px;
+          height: 2px;
+          background-color: $pink;
+        }
+      }
+      .new-price{
+        color: $green;
+        margin-left: 34px;
+        font-size: 25px;
+        font-family: $font-b;
+      }
+      .time{
+        margin-left: 46px;
+        font-size: 25px;
+        font-family: $font-m;
+      }
     }
   }
+
+
+  .stage-header {
+    display: flex;
+    margin-bottom: 34px;
+    align-items: center;
+  
+    &__title {
+      text-align: left;
+      padding-left: 22px;
+      display: flex;
+      align-items: flex-end;
+      max-width: 392px;
+    }
+  
+    &__icon {
+      flex-shrink: 0;
+      position: relative;
+  
+      .num {
+        width: 58px;
+        height: 58px;
+        background-color: $green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: #ffffff;
+        font-family: $font-b;
+        font-size: 25px;
+        position: absolute;
+        z-index: -1;
+        right: 42%;
+        bottom: 58%;
+        padding-bottom: 4px;
+      }
+  
+      .icon {
+        width: 48px;
+        height: 48px;
+        background-color: $pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: #ffffff;
+        font-family: $font-b;
+        font-size: 25px;
+        position: relative;
+        // margin-left: auto;
+        // margin-top: -22px;
+        img {
+          width: 24px;
+        }
+
+        .plus{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          margin-top: 2px;
+        }
+      }
+  
+    }
+  
+  }
 }
+
+
+

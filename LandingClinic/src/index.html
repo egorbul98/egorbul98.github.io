@@ -6,21 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
 </head>
 
 <body>
 
-  <div class="header-img-building-wrapper">
-    <div class="header-img-building-inner">
-      <div class="header-img-building">
-        <div class="header-img-building__img"></div>
-        <div class="cloud-1"><img src="image/clouds_1.png" alt=""></div>
-        <div class="cloud-2"><img src="image/clouds_2.png" alt=""></div>
-      </div>
-    </div>
-  </div>
 
+  <div class="header-wrapper">
     <div class="main-wrap">
       <header class="header">
         <div class="left-block">
@@ -32,7 +23,7 @@
                 <div class="subtitle text-green">Основана в 2005 году</div>
               </div>
             </div>
-  
+
             <div class="info">
               <div class="email"><a href="mailto:info@d-med.pro">info@d-med.pro</a></div>
               <div class="phone"><a class="text-green" href="tel:84951059999">8 (495) 105-99-99</a></div>
@@ -41,40 +32,51 @@
           <h1 class="title header__title text-pink">
             Лечение желчекаменной болезни <span class="spec">без операции</span> в Санкт-Петербурге!
           </h1>
-  
+
           <div class="header__desc">
             <h4 class="title text-green">Для каждого пациента обеспечиваем:</h4>
             <ul class="list">
-              <li class="list-item">Перелёт <span class="spec-text">Москва &#8594; Санкт-Петербург</span> (в одну сторону)
+              <li class="list-item">
+                <p>
+                  Перелёт <span class="spec-text"> Москва &#8594; Санкт-Петербург </span> (в одну
+                  сторону)
+                </p>
               </li>
-              <li class="list-item">Проживание в апартаментах на всё время лечения</li>
+              <li class="list-item">
+                <p>Проживание в апартаментах на всё время лечения</p>
+              </li>
             </ul>
           </div>
-  
+
           <div class="header__picture">
             <div class="icon"><img src="./image/svg/plain.svg" alt="">
               <div class="text">Привезём</div>
             </div>
-            <div><img src="./image/svg/road.svg" alt=""></div>
+            <div><img src="./image/svg/road.svg" class="road" alt=""></div>
             <div class="icon"><img src="./image/svg/key.svg" alt="">
               <div class="text">Поселим</div>
             </div>
-            <div><img src="./image/svg/road.svg" alt=""></div>
+            <div><img src="./image/svg/road-2.svg" class="road" alt=""></div>
             <div class="icon"> <img src="./image/svg/heart.svg" alt="">
               <div class="text">Вылечим</div>
             </div>
-  
+
           </div>
         </div>
         <div class="right-block">
-          
+          <div class="header-img-building">
+            <div class="header-img-building__img"></div>
+            <div class="cloud-1"><img src="image/clouds_1.png" alt=""></div>
+            <div class="cloud-2"><img src="image/clouds_2.png" alt=""></div>
+          </div>
         </div>
       </header>
     </div>
+  </div>
 
 
-  <div class="main-wrap">
-    <section class="course-section">
+  <section class="course-section">
+    <div class="main-wrap">
       <h2 class="title text-pink">В курс лечения входит:</h2>
       <div class="course-list">
         <div class="course-list-item">
@@ -85,7 +87,8 @@
         <div class="course-list-item">
           <div class="icon">+</div>
           <p class="text">Проживание в современных апартаментах недалеко <br>
-            от аэропорта Пулково и в <span class="spec-text">15 минутах</span> езды от Клиники <br><span class="text-underline">на всё время прохождения курса лечения</span></p>
+            от аэропорта Пулково и в <span class="spec-text">15 минутах</span> езды от Клиники <br><span
+              class="text-underline">на всё время прохождения курса лечения</span></p>
         </div>
 
         <div class="course-list-item">
@@ -98,16 +101,16 @@
         <div class="course-list-item">
           <div class="icon">+</div>
           <p class="text">Сопровождение лечения на всём курсе <span class="spec-text">Главным врачом
-            клиники</span> доктором медицинских наук Еленой Викторовной
+              клиники</span> доктором медицинских наук Еленой Викторовной
             Донченко</p>
         </div>
 
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
-  <div class="main-wrap">
-    <section class="stage-section">
+  <section class="stage-section">
+    <div class="main-wrap">
       <h2 class="title text-green">Как всё будет?</h2>
       <div class="stages">
 
@@ -115,7 +118,7 @@
           <div class="stage-header">
             <div class="stage-header__icon">
               <div class="num">1</div>
-              <div class="icon"><img src="image/svg/heart.svg" alt=""></div>
+              <div class="icon"><img src="image/svg/phone.svg" alt=""></div>
             </div>
             <h4 class="title stage-header__title text-pink">Устанавливаем связь</h4>
           </div>
@@ -123,15 +126,152 @@
             <p>Вы связываетесь с нами любым удобным
               для вас способом:</p>
             <ul class="list">
-              <li class="list-item"><p>по телефону <a href="tel:88123095818" class="spec-text text-underline">8 (812) 309-58-18</a></p></li>
-              <li class="list-item"><p>с помощью заявки на сайте</p></li>
-              <li class="list-item"><p>по электронной почте <a href="mailto:info@d-med.pro" class="spec-text text-underline">info@d-med.pro.</a></p></li>
+              <li class="list-item">
+                <p>по телефону <a href="tel:88123095818" class="spec-text text-underline">8 (812) 309-58-18</a></p>
+              </li>
+              <li class="list-item">
+                <p>с помощью заявки на сайте</p>
+              </li>
+              <li class="list-item">
+                <p>по электронной почте <a href="mailto:info@d-med.pro"
+                    class="spec-text text-underline">info@d-med.pro.</a></p>
+              </li>
             </ul>
           </div>
         </div>
+
+        <div class="stage stage-second">
+          <div class="stage-header">
+            <div class="stage-header__icon">
+              <div class="num">2</div>
+              <div class="icon"><img src="image/svg/package.svg" alt=""></div>
+            </div>
+            <h4 class="title stage-header__title text-pink">Изучаем историю болезни</h4>
+          </div>
+          <div class="stage-info">
+            <p>Вы отправляете нам копии имеющихся анализов
+              (УЗИ, анализ крови: клинический анализ крови,
+              АЛТ, АСТ, билирубин) на email <a href="mailto:info@d-med.pro" class="spec-text text-underline">info@d-med.pro.</a></p>
+            <p>Эти документы необходимы для изучения
+              истории болезни и проведения онлайн-
+              консультации главным врачом клиники.</p>
+          </div>
+        </div>
+
+        <div class="stage stage-third">
+          <div class="stage-header">
+            <div class="stage-header__icon">
+              <div class="num">3</div>
+              <div class="icon"><img src="image/svg/doctor.svg" alt=""></div>
+            </div>
+            <h4 class="title stage-header__title text-pink">Онлайн-консультация главного врача</h4>
+          </div>
+          <div class="stage-info">
+            <ul class="list list-pink">
+              <li class="list-item">
+                <p>Знакомство с методикой лечения и главным
+                  врачом клиники доктором медицинских наук
+                  Донченко Е.В.</p>
+              </li>
+              <li class="list-item">
+                <p>Сбор анамнеза</p>
+              </li>
+              <li class="list-item">
+                <p>Формирование предварительной персональной
+                  программы лечения</p>
+              </li>
+            </ul>
+
+            <div class="stage-info-footer">
+              <div class="old-price">3 000 руб.</div>
+              <div class="new-price">1 500 руб.</div>
+              <div class="time">30 минут</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage stage-fourth">
+          <div class="stage-header">
+            <div class="stage-header__icon">
+              <div class="num">4</div>
+              <div class="icon"><img src="image/svg/plain.svg" alt=""></div>
+            </div>
+            <h4 class="title stage-header__title text-pink">Планирование лечения
+              и организация перелёта</h4>
+          </div>
+          <div class="stage-info">
+            <ul class="list list-pink">
+              <li class="list-item">
+                <p>Определение даты начала лечения</p>
+              </li>
+              <li class="list-item">
+                <p>Внесение депозита</p>
+              </li>
+              <li class="list-item">
+                <p>Организация перелёта
+                  <span class="br">Москва —> Санкт-Петербург (в одну сторону)</span>
+                  и проживания</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stage stage-fifth">
+          <div class="stage-header">
+            <div class="stage-header__icon">
+              <div class="num">5</div>
+              <div class="icon"><img src="image/svg/syringe.svg" alt=""></div>
+            </div>
+            <h4 class="title stage-header__title text-pink">Подготовка к лечению</h4>
+          </div>
+          <div class="stage-info">
+            <ul class="list">
+              <li class="list-item">
+                <p>Приём и осмотр у Донченко Е.В.</p>
+              </li>
+              <li class="list-item">
+                <p>Утверждение окончательного плана лечения
+                  по результатам осмотра</p>
+              </li>
+              <li class="list-item">
+                <p>Заключение договора и оплата всего курса
+                  лечения</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stage stage-sixth">
+          <div class="stage-header">
+            <div class="stage-header__icon">
+              <div class="num">6</div>
+              <div class="icon"><img src="image/svg/portfolio.svg" alt=""><span class="plus">+</span></div>
+            </div>
+            <h4 class="title stage-header__title text-pink">Прохождение курса</h4>
+          </div>
+          <div class="stage-info">
+            <p>Вы пройдёте процедуры и получите
+              гарантированный результат по прохождению
+              полного курса лечения.</p>
+            <p>На протяжении всего курса процесс вашего
+              лечения будет лично курировать главный врач,
+              доктор медицинских наук Донченко Е.В.,<span class="br"></span>
+              а врачи клиники помогут достичь
+              максимального результата.</p>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="main-wrap">
+      <h2 class="title text-pink">#жкббезоперации</h2>
+      
+    </div>
+  </section>
+
 
 </body>
 

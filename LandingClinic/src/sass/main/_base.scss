@@ -6,6 +6,13 @@ html, body{
   font-size: 20px;
   font-family: $font;
   color: $col-main;
+
+  @include media-max($S){
+    font-size: 18px;
+  }
+  @include media-max($XS){
+    font-size: 15px;
+  }
 }
 
 body{
@@ -27,12 +34,23 @@ body{
 h1.title{
   font-size: 48px;
   line-height: 61px;
+  @include media-max($LM){
+    font-size: 43px;
+  }
 }
 h2.title{
   font-size: 45px;
+
+  @include media-max($LM){
+    font-size: 40px;
+  }
 }
 h4.title{
   font-size: 27px;
+
+  @include media-max($LM){
+    font-size: 24px;
+  }
 }
 h6.title{
   font-size: 18px;
@@ -57,7 +75,9 @@ h1,h2,h3,h4,h5,h6{
   color: $green;
   // margin-left: 5px;
   // margin-right: 5px;
-  
+  // &::after{
+  //   content: '\00A0';
+  // }
 }
 .text-underline{
   text-decoration: underline;
@@ -71,5 +91,44 @@ a{
   }
 }
 p{
-  line-height: 28px;
+  line-height: 32px;
+  font-size: 1rem;
+}
+
+
+
+.list{
+
+  &.list-pink{
+
+    .list-item{
+      &::before{
+        background-color: $pink;
+      }
+    }
+
+  }
+  .list-item{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &::before{
+      margin-top: 10px;
+      flex-shrink: 0;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: $green;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+}
+
+.br{
+  display: block;
 }
