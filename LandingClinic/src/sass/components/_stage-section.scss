@@ -1,0 +1,88 @@
+.stage-section {
+  margin-top: 106px;
+
+  .title {
+    text-align: center;
+  }
+
+  .stages {
+    margin-top: 49px;
+    padding-left: 30px;
+  }
+
+  .stage {
+    &.stage-first {
+      .list {
+        margin-top: 30px;
+      }
+    }
+
+  }
+}
+
+.stage-header {
+  display: flex;
+  margin-bottom: 34px;
+  align-items: center;
+
+  &__title {
+    text-align: left;
+    padding-left: 22px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    position: relative;
+
+    .num {
+      width: 58px;
+      height: 58px;
+      background-color: $green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      font-family: $font-b;
+      font-size: 25px;
+      position: absolute;
+      z-index: -1;
+      right: 42%;
+      bottom: 58%;
+      padding-bottom: 4px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      background-color: $pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      font-family: $font-b;
+      font-size: 25px;
+
+      // margin-left: auto;
+      // margin-top: -22px;
+      img {
+        width: 24px;
+      }
+    }
+
+  }
+
+}
+
+.stage-info {
+  padding-left: 70px;
+
+  .list {
+    .list-item::before {
+      margin-right: 14px;
+    }
+  }
+}

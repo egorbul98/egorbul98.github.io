@@ -1,0 +1,75 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+html, body{
+  font-size: 20px;
+  font-family: $font;
+  color: $col-main;
+}
+
+body{
+  background-color: $col-bg-main;
+  padding-bottom: 200px;
+}
+.main-wrap{
+  max-width: 1310px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  height: 100%;
+
+  @include media-max($S){
+    padding: 0 14px;
+  }
+}
+
+h1.title{
+  font-size: 48px;
+  line-height: 61px;
+}
+h2.title{
+  font-size: 45px;
+}
+h4.title{
+  font-size: 27px;
+}
+h6.title{
+  font-size: 18px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-b;
+  font-weight: bold;
+}
+
+.text-green{
+  color: $green;
+}
+.text-pink{
+  color: $pink;
+}
+.text-white{
+  color: #fff;
+}
+
+.spec-text{
+  font-weight: bold;
+  color: $green;
+  // margin-left: 5px;
+  // margin-right: 5px;
+  
+}
+.text-underline{
+  text-decoration: underline;
+}
+a{
+  text-decoration: none;
+  color: $col-main;
+  transition: color 0.25s;
+  &:hover{
+    color: $green;
+  }
+}
+p{
+  line-height: 28px;
+}

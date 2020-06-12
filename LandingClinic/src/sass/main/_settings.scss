@@ -1,0 +1,49 @@
+$XL: 1980;
+$L: 1440;
+$M: 1024;
+$S: 768;
+$XS: 576;
+
+$pink: #B52171;
+$green: #75AF3A;
+$gray: #CDCCCC;
+$col-main: #1E1E1E;
+$col-bg-main: #F3F3F3;
+
+$font: "Geometria", sans-serif;
+$font-b: "Geometria-Bold", sans-serif;
+$font-m: "Geometria-Medium", sans-serif;
+
+
+
+@font-face {
+  font-family: "Geometria"; 
+  src: url("./../fonts/Geometria.ttf") format("truetype");
+  font-style: normal; 
+  font-weight: normal; 
+}
+@font-face {
+  font-family: "Geometria-Bold"; 
+  src: url("./../fonts/Geometria-Bold.ttf") format("truetype");
+  font-style: normal; 
+  font-weight: bold; 
+}
+@font-face {
+  font-family: "Geometria-BoldItalic"; 
+  src: url("./../fonts/Geometria-BoldItalic.ttf") format("truetype");
+  font-style: italic; 
+  font-weight: bold; 
+}
+@font-face {
+  font-family: "Geometria-Medium"; 
+  src: url("./../fonts/Geometria-Medium.ttf") format("truetype");
+  font-style: normal; 
+  font-weight: 600; 
+}
+@font-face {
+  font-family: "Geometria-MediumItalic"; 
+  src: url("./../fonts/Geometria-MediumItalic.ttf") format("truetype");
+  font-style: italic; 
+  font-weight: 600; 
+}
+
