@@ -21,7 +21,8 @@
 
   .img-wrap {
     height: 370px;
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
     background-color: #fff;
     border-radius: 33px;
     display: flex;

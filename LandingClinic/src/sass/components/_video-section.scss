@@ -1,14 +1,23 @@
 .video-section{
   margin-top: 122px;
+  position: relative;
   h2.title{
     text-transform: uppercase;
     text-align: center;
   }
   .video{
     margin-top: 59px;
-    width: 712px;
+    width: 100%;
+    max-width: 712px;
     height: 401px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .cloud-left{
+    position: absolute;
+    left: -99px;
+    top: -174px;
+    z-index: -1;
   }
 }

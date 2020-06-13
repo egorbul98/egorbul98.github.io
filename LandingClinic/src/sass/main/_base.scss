@@ -6,7 +6,7 @@ html, body{
   font-size: 20px;
   font-family: $font;
   color: $col-main;
-
+  
   @include media-max($S){
     font-size: 18px;
   }
@@ -17,6 +17,7 @@ html, body{
 
 body{
   background-color: $col-bg-main;
+  // overflow-x: hidden;
 }
 .main-wrap{
   max-width: 1310px;
@@ -35,6 +36,16 @@ h1.title{
   line-height: 61px;
   @include media-max($LM){
     font-size: 43px;
+    line-height: 57px;
+  }
+
+  @include media-max($S){
+    font-size: 30px;
+    line-height: 43px;
+  }
+  @include media-max($XS){
+    font-size: 23px;
+    line-height: 33px;
   }
 }
 h2.title{
@@ -43,6 +54,13 @@ h2.title{
   @include media-max($LM){
     font-size: 40px;
   }
+  @include media-max($S){
+    font-size: 28px;
+  }
+  @include media-max($S){
+    font-size: 25px;
+  }
+  
 }
 h3.title{
   font-size: 30px;
@@ -56,6 +74,12 @@ h4.title{
 
   @include media-max($LM){
     font-size: 24px;
+  }
+  @include media-max($S) {
+    font-size: 21px;
+  }
+  @include media-max($XS) {
+    font-size: 18px;
   }
 }
 h6.title{
@@ -169,4 +193,10 @@ p{
   border-radius: 6px;
   color: #ffffff;
   font-weight: bold;
+}
+
+.cloud-right, .cloud-left{
+  @include media-max($M){
+    display: none;
+  }
 }

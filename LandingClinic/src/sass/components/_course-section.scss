@@ -1,5 +1,7 @@
 .course-section {
   margin-top: 90px;
+  position: relative;
+  overflow: hidden;
 
   .title{
     text-align: center;
@@ -24,6 +26,7 @@
     .text {
       margin-left: 22px;
       margin-top: 6px;
+      width: 100%;
     }
 
     .icon {
@@ -45,4 +48,18 @@
 
   }
 
+
+  .cloud-left{
+    position: absolute;
+    left: -99px;
+    bottom: 74px;
+    z-index: -1;
+  }
+  .cloud-right{
+    position: absolute;
+    right: -167px;
+    top: 74px;
+    width: 349px;
+    z-index: -1;
+  }
 }

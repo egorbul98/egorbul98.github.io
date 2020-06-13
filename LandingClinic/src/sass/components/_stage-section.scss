@@ -1,6 +1,7 @@
 .stage-section {
   margin-top: 106px;
-
+  position: relative;
+  overflow: hidden;
   .title {
     text-align: center;
   }
@@ -16,6 +17,7 @@
   .stage {
     margin-top: 144px;
     width: 100%;
+    
     &:first-child{
       margin-top: 0;
     }
@@ -23,6 +25,10 @@
       max-width: 490px;
       .stage-info .list {
         margin-top: 30px;
+      }
+      @include media-max($L){
+        max-width: 50%;
+        padding-right: 27px;
       }
     }
     &.stage-second {
@@ -34,13 +40,25 @@
           margin-bottom: 0;
         }
       }
+      @include media-max($L){
+        max-width: 50%;
+        padding-left: 27px;
+      }
     }
     &.stage-third {
       max-width: 586px;
       margin-top: -34px;
+      @include media-max($L){
+        max-width: 50%;
+        padding-right: 27px;
+      }
     }
     &.stage-fourth {
       max-width: 559px;
+      @include media-max($L){
+        max-width: 50%;
+        padding-left: 27px;
+      }
     }
     &.stage-fifth {
       margin-top: 47px;
@@ -48,6 +66,10 @@
 
       .stage-info .list-item {
         margin-bottom: 18px;
+      }
+      @include media-max($L){
+        max-width: 50%;
+        padding-right: 27px;
       }
     }
     &.stage-sixth {
@@ -59,14 +81,22 @@
           margin-bottom: 0;
         }
       }
+
+      @include media-max($L){
+        max-width: 50%;
+        padding-left: 27px;
+      }
     }
 
 
     .stage-info {
       padding-left: 70px;
     
+      @include media-max($LM){
+        padding-left: 0;
+      }
+
       .list {
-        
         .list-item::before {
           margin-right: 14px;
           width: 11px;
@@ -95,6 +125,15 @@
           min-width: 162px;
           height: 2px;
           background-color: $pink;
+
+          @include media-max($LM){
+            font-size: 23px;
+            min-width: 132px;
+          }
+        }
+
+        @include media-max($LM){
+          font-size: 23px;
         }
       }
       .new-price{
@@ -102,11 +141,21 @@
         margin-left: 34px;
         font-size: 25px;
         font-family: $font-b;
+        @include media-max($LM){
+          font-size: 20px;
+        }
       }
       .time{
         margin-left: 46px;
         font-size: 25px;
         font-family: $font-m;
+
+        @include media-max($LM){
+          font-size: 20px;
+        }
+        @include media-max($S){
+          font-size: 18px;
+        }
       }
     }
   }
@@ -177,6 +226,14 @@
   
     }
   
+  }
+
+
+  .cloud-right{
+    position: absolute;
+    right: -218px;
+    top: -32px;
+    z-index: -1;
   }
 }
 
