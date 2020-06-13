@@ -26,8 +26,9 @@ body{
   margin: 0 auto;
   height: 100%;
 
-  @include media-max($S){
-    padding: 0 14px;
+  
+  @include media-max($XS){
+    padding: 0 10px;
   }
 }
 
@@ -57,7 +58,7 @@ h2.title{
   @include media-max($S){
     font-size: 28px;
   }
-  @include media-max($S){
+  @include media-max($XS){
     font-size: 25px;
   }
   
@@ -67,6 +68,12 @@ h3.title{
 
   @include media-max($LM){
     font-size: 27px;
+  }
+  @include media-max($S){
+    font-size: 20px;
+  }
+  @include media-max($XS){
+    font-size: 18px;
   }
 }
 h4.title{
@@ -84,6 +91,10 @@ h4.title{
 }
 h6.title{
   font-size: 18px;
+  @include media-max($S) {
+    font-size: 15px;
+  }
+  
 }
 h1,h2,h3,h4,h5,h6{
   font-family: $font-b;
@@ -123,6 +134,13 @@ a{
 p{
   line-height: 32px;
   font-size: 1rem;
+
+  @include media-max($S) {
+    line-height: 29px;
+  }
+  @include media-max($XS) {
+    line-height: 24px;
+  }
 }
 
 
@@ -175,6 +193,15 @@ p{
   color: $col-input;
   overflow: hidden;
 
+  @include media-max($M){
+    height: 60px;
+    font-size: 16px;
+  }
+  @include media-max($XS){
+    height: 50px;
+    font-size: 14px;
+  }
+
   &::placeholder {
     color: $col-input;
   }
@@ -193,6 +220,18 @@ p{
   border-radius: 6px;
   color: #ffffff;
   font-weight: bold;
+
+  @include media-max($M){
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include media-max($XS){
+    height: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .cloud-right, .cloud-left{

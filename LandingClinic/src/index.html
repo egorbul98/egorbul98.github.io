@@ -20,7 +20,7 @@
               <div class="img"><img src="image/logo.png" alt=""></div>
               <div class="text">
                 <h6 class="title text-pink">Клиника Экологической Медицины</h6>
-                <div class="subtitle text-green">Основана в 2005 году</div>
+                <div class="subtitle text-green">Основана <span class="year">в 2005 году</span></div>
               </div>
             </div>
 
@@ -42,7 +42,7 @@
                   сторону)
                 </p>
               </li>
-              <li class="list-item">
+              <li class="list-item list-item--width">
                 <p>Проживание в апартаментах на всё время лечения</p>
               </li>
             </ul>
@@ -56,7 +56,13 @@
             <div class="icon"><img src="./image/svg/key.svg" alt="">
               <div class="text">Поселим</div>
             </div>
-            <div><img src="./image/svg/road-2.svg" class="road" alt=""></div>
+            <div>
+              
+              <picture>
+                  <source srcset="./image/svg/road.svg" media="(max-width: 768px)">
+                  <img src="./image/svg/road-2.svg" class="road" alt="">
+              </picture>
+            </div>
             <div class="icon"> <img src="./image/svg/heart.svg" alt="">
               <div class="text">Вылечим</div>
             </div>
@@ -81,13 +87,12 @@
       <div class="course-list">
         <div class="course-list-item">
           <div class="icon">+</div>
-          <p class="text">Перелёт <span class="spec-text">Москва-Санкт-Петербург</span> в одну сторону</p>
+          <p class="text">Перелёт <span class="spec-text">Москва-Санкт-Петербург</span> (в одну сторону)</p>
         </div>
 
         <div class="course-list-item">
           <div class="icon">+</div>
-          <p class="text">Проживание в современных апартаментах недалеко <br>
-            от аэропорта Пулково и в <span class="spec-text">15 минутах</span> езды от Клиники <br><span
+          <p class="text">Проживание в современных апартаментах недалеко <span class="br"></span> от аэропорта Пулково и в <span class="spec-text">15 минутах</span> езды от Клиники <span class="br"></span><span
               class="text-underline">на всё время прохождения курса лечения</span></p>
         </div>
 
@@ -110,6 +115,31 @@
     <img class="cloud-left" src="image/cloud-gray-left.png" alt="">
     <img class="cloud-right" src="image/cloud-gray-right.png" alt="">
   </section>
+
+<section class="decoration-section">
+  <div class="main-wrap">
+    <div class="decoration-inner">
+      <div class="left">
+        <div class="icon"><img src="./image/svg/church.svg" alt=""></div>
+        <div class="text">VKO</div>
+      </div>
+      <div class="middle">
+        <div class="icon">
+          <picture>
+            <source srcset="./image/svg/line-dotted.svg" media="(max-width: 470px)">
+            <img src="./image/svg/line-dotted-lg.svg" class="road" alt="">
+        </picture>
+        </div>
+        <div class="icon icon-arrow"><img src="./image/svg/arrow-right-dotted.svg" alt=""></div>
+
+      </div>
+      <div class="right">
+        <div class="text">LED</div>
+        <div class="icon"><img src="./image/svg/church-2.svg" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="stage-section">
     <div class="main-wrap">
@@ -308,15 +338,19 @@
 
   <section class="payment-section">
     <div class="main-wrap">
-      <h2 class="title text-pink">Оплата онлайн-консультации</h2>
-      <div class="payment-section-inner">
-        <p class="desc">Вы можете оплатить онлайн-консультацию <a href="#" class="spec text-underline">без предварительной заявки</a>. В таком случае мы увидим ваш платеж и свяжемся с вами,
-          чтобы обсудить удобное для вас время консультации.</p>
-  
-          <div class="img-wrap">
-            <img src="image/payment.png" alt="">
-            <span class="icon"><img src="image/svg/arrow-down-yell.svg" alt=""></span>
+      <div class="payment-section__wrap">
+        <h2 class="title text-pink">Оплата онлайн-консультации</h2>
+        <div class="payment-section-inner">
+          <div class="info">
+            <p class="desc">Вы можете оплатить <span class="desc__br"></span> онлайн-консультацию <a href="#" class="spec text-underline">без предварительной заявки.</a> <span class="desc__inner">В таком случае мы увидим ваш платеж и свяжемся с вами,
+              чтобы обсудить удобное для вас время консультации.</span></p>
           </div>
+    
+            <div class="img-wrap">
+              <img src="image/payment.png" alt="">
+              <span class="icon"><img src="image/svg/arrow-down-yell.svg" alt=""></span>
+            </div>
+        </div>
       </div>
     </div>
   </section>
@@ -324,7 +358,12 @@
   <footer class="footer">
     <div class="main-wrap">
       
-      <span class="img-1"><img src="image/footer-img-1.png" alt=""></span>
+      <span class="img-1">
+        <picture>
+          <source srcset="image/footer-img-1-sm.png" media="(max-width: 768px )">
+          <img src="image/footer-img-1.png" alt="">
+        </picture>
+      </span>
       <span class="img-2"><img src="image/footer-img-2.png" alt=""></span>
       <span class="img-white">
         <div class="img-white-inner">

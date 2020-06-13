@@ -1,0 +1,58 @@
+.decoration-section {
+  display: none;
+  margin-top: 48px;
+  background-color: $green;
+  height: 100px;
+
+  @include media-max($XS) {
+    display: block;
+  }
+
+  .decoration-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+  }
+
+  .left,
+  .right,
+  .middle {
+    display: flex;
+    align-items: center;
+  }
+
+  .left {
+    .text {
+      // margin-left: 22px;
+      margin-left: 20px;
+    }
+  }
+
+  .right {
+    .text {
+      margin-right: 15px;
+    }
+  }
+
+
+  .middle {
+    padding-top: 2px;
+
+    picture {
+      display: flex;
+    }
+
+    .icon-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .text {
+    letter-spacing: -1px;
+    font-size: 22px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}

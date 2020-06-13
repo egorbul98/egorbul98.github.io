@@ -2,6 +2,15 @@
   margin-top: 106px;
   position: relative;
   overflow: hidden;
+
+  @include media-max($S) {
+    margin-top: 70px;
+  }
+
+  @include media-max($XS) {
+    margin-top: 42px;
+  }
+
   .title {
     text-align: center;
   }
@@ -12,54 +21,114 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @include media-max($M) {
+      flex-direction: column;
+
+    }
+
+    @include media-max($S) {
+      margin-top: 58px;
+    }
+
+    @include media-max($XS) {
+      margin-top: 42px;
+    }
   }
 
   .stage {
     margin-top: 144px;
     width: 100%;
-    
-    &:first-child{
+
+
+    &:first-child {
       margin-top: 0;
     }
+
     &.stage-first {
       max-width: 490px;
+
       .stage-info .list {
         margin-top: 30px;
       }
-      @include media-max($L){
+
+      @include media-max($L) {
         max-width: 50%;
         padding-right: 27px;
       }
+
+      @include media-max($M) {
+        max-width: 100%;
+        padding-left: 0;
+      }
     }
+
     &.stage-second {
       max-width: 559px;
-      .stage-info p{
+
+      .stage-info p {
         margin-bottom: 34px;
 
-        &:last-child{
+        &:last-child {
           margin-bottom: 0;
         }
       }
-      @include media-max($L){
+
+      @include media-max($L) {
         max-width: 50%;
         padding-left: 27px;
       }
+
+      @include media-max($M) {
+        max-width: 100%;
+        margin-top: 60px;
+        padding-left: 0;
+      }
+
+      @include media-max($XS) {
+        margin-top: 54px;
+      }
     }
+
     &.stage-third {
       max-width: 586px;
       margin-top: -34px;
-      @include media-max($L){
+
+      @include media-max($L) {
         max-width: 50%;
         padding-right: 27px;
       }
+
+      @include media-max($M) {
+        max-width: 100%;
+        margin-top: 60px;
+        padding-left: 0;
+      }
+
+      @include media-max($XS) {
+        margin-top: 54px;
+      }
     }
+
     &.stage-fourth {
       max-width: 559px;
-      @include media-max($L){
+
+      @include media-max($L) {
         max-width: 50%;
         padding-left: 27px;
       }
+
+      @include media-max($M) {
+        max-width: 100%;
+        margin-top: 60px;
+        padding-left: 0;
+      }
+
+      @include media-max($XS) {
+        margin-top: 54px;
+      }
     }
+
     &.stage-fifth {
       margin-top: 47px;
       max-width: 546px;
@@ -67,32 +136,55 @@
       .stage-info .list-item {
         margin-bottom: 18px;
       }
-      @include media-max($L){
+
+      @include media-max($L) {
         max-width: 50%;
         padding-right: 27px;
       }
+
+      @include media-max($M) {
+        max-width: 100%;
+        margin-top: 60px;
+        padding-left: 0;
+      }
+
+      @include media-max($XS) {
+        margin-top: 54px;
+      }
     }
+
     &.stage-sixth {
       max-width: 559px;
-      .stage-info p{
+
+      .stage-info p {
         margin-bottom: 24px;
 
-        &:last-child{
+        &:last-child {
           margin-bottom: 0;
         }
       }
 
-      @include media-max($L){
+      @include media-max($L) {
         max-width: 50%;
         padding-left: 27px;
+      }
+
+      @include media-max($M) {
+        max-width: 100%;
+        margin-top: 60px;
+        padding-left: 0;
+      }
+
+      @include media-max($XS) {
+        margin-top: 54px;
       }
     }
 
 
     .stage-info {
       padding-left: 70px;
-    
-      @include media-max($LM){
+
+      @include media-max($LM) {
         padding-left: 0;
       }
 
@@ -105,17 +197,19 @@
       }
     }
 
-    .stage-info-footer{
+    .stage-info-footer {
       margin-top: 30px;
       display: flex;
       align-items: center;
-      .old-price{
+
+      .old-price {
         color: $pink;
         font-size: 28px;
         font-family: $font-m;
         position: relative;
         letter-spacing: -1px;
-        &::after{
+
+        &::after {
           position: absolute;
           top: 52%;
           left: -5px;
@@ -126,38 +220,45 @@
           height: 2px;
           background-color: $pink;
 
-          @include media-max($LM){
+          @include media-max($LM) {
             font-size: 23px;
             min-width: 132px;
           }
         }
 
-        @include media-max($LM){
+        @include media-max($LM) {
           font-size: 23px;
         }
       }
-      .new-price{
+
+      .new-price {
         color: $green;
         margin-left: 34px;
         font-size: 25px;
         font-family: $font-b;
-        @include media-max($LM){
+
+        @include media-max($LM) {
           font-size: 20px;
         }
       }
-      .time{
+
+      .time {
         margin-left: 46px;
         font-size: 25px;
         font-family: $font-m;
 
-        @include media-max($LM){
+        @include media-max($LM) {
           font-size: 20px;
         }
-        @include media-max($S){
+
+        @include media-max($S) {
           font-size: 18px;
         }
       }
     }
+
+
+
   }
 
 
@@ -165,19 +266,30 @@
     display: flex;
     margin-bottom: 34px;
     align-items: center;
-  
+
+    @include media-max($S) {
+      margin-bottom: 28px;
+    }
     &__title {
       text-align: left;
       padding-left: 22px;
       display: flex;
       align-items: flex-end;
       max-width: 392px;
+
+      @include media-max($S) {
+        padding-left: 15px;
+      }
+
+      @include media-max($XS) {
+        padding-left: 9px;
+      }
     }
-  
+
     &__icon {
       flex-shrink: 0;
       position: relative;
-  
+
       .num {
         width: 58px;
         height: 58px;
@@ -194,8 +306,23 @@
         right: 42%;
         bottom: 58%;
         padding-bottom: 4px;
+
+        @include media-max($M) {
+          width: 48px;
+          height: 48px;
+          font-size: 18px;
+        }
+
+        @include media-max($XS) {
+          width: 31px;
+          height: 31px;
+          font-size: 14px;
+          right: 64%;
+          bottom: 68%;
+          padding-bottom: 0;
+        }
       }
-  
+
       .icon {
         width: 48px;
         height: 48px;
@@ -208,13 +335,27 @@
         font-family: $font-b;
         font-size: 25px;
         position: relative;
-        // margin-left: auto;
-        // margin-top: -22px;
-        img {
-          width: 24px;
+
+
+        @include media-max($S) {
+          width: 45px;
+          height: 45px;
         }
 
-        .plus{
+        @include media-max($XS) {
+          width: 43px;
+          height: 43px;
+        }
+
+        img {
+          width: 24px;
+
+          @include media-max($S) {
+            width: 20px;
+          }
+        }
+
+        .plus {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -223,19 +364,16 @@
           margin-top: 2px;
         }
       }
-  
+
     }
-  
+
   }
 
 
-  .cloud-right{
+  .cloud-right {
     position: absolute;
     right: -218px;
     top: -32px;
     z-index: -1;
   }
 }
-
-
-

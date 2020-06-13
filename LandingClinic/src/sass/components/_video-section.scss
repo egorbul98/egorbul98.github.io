@@ -1,6 +1,15 @@
 .video-section{
   margin-top: 122px;
   position: relative;
+
+  @include media-max($S) {
+    margin-top: 70px;
+  }
+
+  @include media-max($XS) {
+    margin-top: 50px;
+  }
+
   h2.title{
     text-transform: uppercase;
     text-align: center;
@@ -12,6 +21,23 @@
     height: 401px;
     margin-left: auto;
     margin-right: auto;
+    
+    
+    @include media-max($S) {
+      margin-top: 38px;
+      height: auto;
+      padding-bottom: 56%;
+      position: relative;
+      iframe{
+        position: absolute;
+        top: 0;left: 0;right: 0;bottom: 0;
+        width: 100%;
+      }
+    }
+  
+    @include media-max($XS) {
+      margin-top: 25px;
+    }
   }
 
   .cloud-left{

@@ -1,22 +1,81 @@
 .payment-section {
   margin-top: 94px;
 
-  h2.title{
-    text-align: center;
+  @include media-max($S) {
+    margin-top: 70px;
   }
+
+  @include media-max($XS) {
+    margin-top: 37px;
+  }
+
+  &__wrap {
+    @include media-max($S) {
+      background-color: $yellow;
+      border-radius: 5px;
+      padding-top: 21px;
+    }
+  }
+
+  h2.title {
+    text-align: center;
+
+    @include media-max($XS) {
+      text-align: left;
+      padding-left: 27px;
+      padding-right: 27px;
+    }
+  }
+
   .payment-section-inner {
     max-width: 666px;
     margin: auto;
+
+    @include media-max($S) {
+      max-width: 100%;
+
+      .info {
+        padding-left: 27px;
+        padding-right: 27px;
+      }
+    }
+
+
   }
 
   .desc {
     text-align: justify;
     text-align-last: center;
     margin-top: 53px;
+
+    @include media-max($S) {
+      margin-top: 38px;
+    }
+    @include media-max($XS) {
+      text-align: left;
+      text-align-last: left;
+      margin-top: 28px;
+    }
+
+    &__inner {
+      @include media-max($XS) {
+        display: block;
+        margin-top: 24px;
+      }
+    }
+
+    &__br{
+      @include media-max(380) {
+        display: block;
+      }
+    }
   }
 
   .spec {
     font-family: $font-b;
+    @include media-max($XS) {
+      display: block;
+    }
   }
 
   .img-wrap {
@@ -32,11 +91,27 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
+
+    @include media-max($S) {
+      margin-top: 22px;
+      border-radius: 0;
+      padding: 0;
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+    }
+
     .icon {
       position: absolute;
       left: 50%;
       top: -39px;
       transform: translateX(-50%);
+
+      @include media-max($S) {
+        display: none;
+      }
     }
   }
 }

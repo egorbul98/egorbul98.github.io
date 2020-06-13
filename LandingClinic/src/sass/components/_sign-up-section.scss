@@ -1,5 +1,13 @@
 .sign-up-section {
   margin-top: 129px;
+
+  @include media-max($S) {
+    margin-top: 70px;
+  }
+
+  @include media-max($XS) {
+    margin-top: 52px;
+  }
 }
 
 .sign-up-block {
@@ -8,17 +16,31 @@
   border-radius: 33px;
   padding: 35px 46px;
 
+  @include media-max($S) {
+    padding: 30px 20px 24px;
+    border-radius: 5px;
+  }
+
   h3.title {
     color: #ffffff;
     padding-left: 14px;
+
+    @include media-max($M) {
+      padding-left: 0;
+      text-align: center;
+    }
   }
 
   .sign-up-block-form-inner {
     display: flex;
     align-items: center;
+
+    @include media-max($M) {
+      flex-direction: column;
+    }
   }
 
-  
+
 }
 
 .sign-up-block-form {
@@ -28,31 +50,49 @@
     max-width: 430px;
     width: 100%;
     margin-right: 19px;
+
+    @include media-max($M) {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
   }
 
   .btn-submit {
     margin-left: auto;
     flex-shrink: 0;
+
+    @include media-max($M) {
+      margin-left: 0;
+      margin-top: 15px;
+    }
   }
 
   .checkbox-field {
     margin-top: 25px;
-    display: flex;
-    align-items: center;
 
-    input{
+    input {
       display: none;
 
       &:checked+label::after {
         color: $col-main;
       }
     }
+
     label {
       font-size: 14px;
       color: #ffffff;
       position: relative;
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
+      // flex-wrap: wrap;
+      display: block;
+      padding-left: 28px;
+
+      @include media-max($S) {
+        font-size: 12px;
+        padding-left: 24px;
+      }
 
       a.spec {
         color: #ffffff;
@@ -64,13 +104,21 @@
       &::after {
         content: '\2714';
         position: absolute;
-        left: 3.5px;
+        left: 4px;
         top: 0;
         font-size: 14px;
         color: #fff;
+
+        @include media-max($S) {
+          left: 3px;
+          font-size: 12px;
+        }
       }
 
       &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
         content: '';
         width: 17px;
         height: 17px;
@@ -78,8 +126,12 @@
         background-color: #fff;
         border-radius: 4px;
         flex-shrink: 0;
-        margin-right: 11px;
         border: 1px solid #D9D9D9;
+
+        @include media-max($S) {
+          width: 13px;
+          height: 13px;
+        }
       }
 
     }

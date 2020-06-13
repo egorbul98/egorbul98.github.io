@@ -3,6 +3,13 @@
   position: relative;
   overflow: hidden;
 
+  @include media-max($S) {
+    margin-top: 60px;
+  }
+  @include media-max($XS) {
+    margin-top: 34px;
+  }
+
   .title{
     text-align: center;
   }
@@ -12,6 +19,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include media-max($S) {
+      margin-top: 44px;
+      padding-right: 0;
+    }
+    @include media-max($XS) {
+      margin-top: 38px;
+    }
+   
   }
 
   .course-list-item {
@@ -20,6 +36,13 @@
     display: flex;
     margin-bottom: 44px;
 
+    @include media-max($S) {
+      margin-bottom: 34px;
+    }
+    @include media-max($XS) {
+      margin-bottom: 25px;
+    }
+
     &:last-child{
       margin-bottom: 0;
     }
@@ -27,6 +50,18 @@
       margin-left: 22px;
       margin-top: 6px;
       width: 100%;
+
+      @include media-max($S) {
+        margin-left: 14px;
+        margin-top: 2px;
+      }
+      @include media-max($XS) {
+        margin-left: 8px;
+        margin-top: 0;
+        .br{
+          display: none;
+        }
+      }
     }
 
     .icon {
@@ -39,9 +74,19 @@
       flex-shrink: 0;
       border-radius: 50%;
       color: #ffffff;
-      font-size: 17px;
       font-size: 28px;
       font-weight: bold;
+
+      @include media-max($S) {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+      }
+      @include media-max($XS) {
+        width: 21px;
+        height: 21px;
+        font-size: 15px;
+      }
     }
 
    

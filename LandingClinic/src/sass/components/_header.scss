@@ -1,6 +1,11 @@
 .header-wrapper {
   overflow-x: hidden;
   padding-bottom: 22px;
+
+  @include media-max($M) {
+    padding-bottom: 0;
+    overflow-x: visible;
+  }
 }
 
 .header {
@@ -9,10 +14,102 @@
   justify-content: space-between;
   position: relative;
 
+  @include media-max($S) {
+    margin-top: 72px;
+    position: static;
+  }
+  &__title {
+    margin-top: 92px;
+    margin-bottom: 64px;
+    padding-right: 66px;
+
+    @include media-max($LM) {
+      padding-right: 0;
+    }
+    @include media-max($S) {
+      margin-top: 40px;
+      margin-bottom: 46px;
+    }
+    @include media-max($XS) {
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+
+    .spec {
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      width: 380px;
+
+      @include media-max($LM) {
+        width: 357px;
+      }
+
+      @include media-max($S) {
+        width: 266px;
+      }
+
+      @include media-max($XS) {
+        width: 186px;
+      }
+
+      .bg {
+        background-color: $pink;
+        width: 380px;
+        border-radius: 34px;
+        position: absolute;
+        height: 65px;
+        // left: -18px;
+        left: 0;
+        z-index: -1;
+        top: 2px;
+
+        @include media-max($LM) {
+          height: 60px;
+          width: 357px;
+        }
+
+        @include media-max($S) {
+          height: 43px;
+          width: 266px;
+        }
+
+        @include media-max($XS) {
+          height: 33px;
+          width: 186px;
+        }
+      }
+    }
+  }
+
   &__desc {
     position: relative;
     padding-left: 20px;
 
+    @include media-max($S) {
+      padding-left: 16px;
+      .list {
+        .list-item {
+          margin-bottom: 12px;
+          &::before{
+            display: none;
+          }
+
+          
+        }
+      }
+    }
+    @include media-max(425) {
+      .list {
+        .list-item {
+          &--width{
+            max-width: 232px;
+          }
+        }
+      }
+    }
+    
     &::after {
       position: absolute;
       content: '';
@@ -25,19 +122,25 @@
 
       @include media-max($S) {
         width: 3px;
+        height: 97%;
+        top: 3px;
       }
     }
 
     .title {
       line-height: 1;
       margin-bottom: 30px;
-    }
 
-    @include media-max($S) {
-      .list .list-item::before {
-        display: none;
+      @include media-max($S) {
+        margin-bottom: 25px;
+        line-height: 25px;
+      }
+      @include media-max($XS) {
+        margin-bottom: 20px;
       }
     }
+
+    
 
   }
 
@@ -59,8 +162,33 @@
       margin-left: 0;
     }
 
+    @include media-max($M) {
+      margin-top: 82px;
+    }
+
+    @include media-max($S) {
+      height: 110px;
+      margin-top: 58px;
+    }
+
+    @include media-max($XS) {
+      margin-top: 40px;
+      height: 75px;
+      box-shadow: none;
+      border-radius: 5px;
+      padding: 0 12px;
+    }
+
     .road {
       margin-bottom: 38px;
+
+      @include media-max($S) {
+        margin-bottom: 28px;
+      }
+  
+      @include media-max($XS) {
+        margin-bottom: 20px;
+      }
     }
 
     .icon {
@@ -69,49 +197,36 @@
       align-items: center;
       flex-direction: column;
 
+      @include media-max($S) {
+        img{
+          width: 34px;
+        }
+      }
+      @include media-max($XS) {
+        img{
+          width: 24px;
+        }
+      }
       .text {
         color: #FFFFFF;
         text-transform: uppercase;
         font-size: 17px;
         font-family: $font-b;
         margin-top: 18px;
-      }
-    }
-  }
 
-  &__title {
-    margin-top: 92px;
-    margin-bottom: 64px;
-    padding-right: 66px;
-    @include media-max($LM) {
-      padding-right: 0;
-    }
-    .spec{
-      color: #FFFFFF;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      width: 380px;
-      @include media-max($LM) {
-        width: 357px;
-      }
-      .bg{
-        background-color: $pink;
-        width: 380px;
-        border-radius: 34px ;
-        position: absolute;
-        height: 65px;
-        // left: -18px;
-        left: 0;
-        z-index: -1;
-        top: 2px;
-        @include media-max($LM) {
-          height: 60px;
-          width: 357px;
+        @include media-max($S) {
+          font-size: 14px;
+          margin-top: 12px;
+        }
+        @include media-max($XS) {
+          font-size: 10px;
+          margin-top: 9px;
         }
       }
     }
   }
+
+
 
   .right-block {
     @include media-max($M) {
@@ -126,6 +241,7 @@
 
     @include media-max($M) {
       max-width: 100%;
+      padding-right: 0;
     }
   }
 
@@ -136,33 +252,62 @@
   justify-content: space-between;
   align-items: center;
 
-
+  @include media-max($S) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   .logo {
     display: flex;
     width: 214px;
 
+    @include media-max($S) {
+      order: 1;
+      width: 100%;
+    }
+
     .img img {
       flex-shrink: 0;
       height: 65px;
       min-width: 65px;
+
+      @include media-max($S) {
+        height: 49px;
+        min-width: 49px;
+      }
     }
 
     .text {
       margin-left: 10px;
       margin-top: 2px;
-
+     
+      @include media-max($S) {
+        display: flex;
+        align-items: center;
+      }
       .subtitle {
         font-weight: bold;
         font-size: 10px;
         text-transform: uppercase;
         margin-top: 8px;
         font-family: $font-b;
+        @include media-max($S) {
+          margin-left: 24px;
+          line-height: 15px;
+          margin-bottom: 8px;
+          .year{
+            display: block;
+          }
+        }
       }
     }
 
     .title {
       line-height: 20px;
+      @include media-max($S) {
+        line-height: 16px;
+        max-width: 120px;
+      }
     }
 
   }
@@ -173,6 +318,20 @@
     justify-content: space-between;
     align-items: center;
 
+    @include media-max($S) {
+      order: 0;
+      height: 47.5px;
+      width: 100%;
+      background-color: $pink;
+      margin-top: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 20px;
+    }
+    @include media-max($XS) {
+      padding: 0 10px;
+    }
 
     .phone {
       flex-shrink: 0;
@@ -182,6 +341,16 @@
       @include media-max($LM) {
         font-size: 18px;
       }
+
+      @include media-max($S) {
+        padding-left: 9px;
+        a{
+          color: #FFFFFF;
+        }
+      }
+     
+        
+  
     }
 
     .email {
@@ -189,12 +358,25 @@
       font-size: 22px;
       text-decoration: underline;
       margin-right: 50px;
-
+      
       @include media-max($LM) {
         font-size: 18px;
         margin-right: 40px;
         padding-left: 18px;
       }
+
+      @include media-max($S) {
+        order: 1;
+        margin-right: 0;
+        a{
+          color: #FFFFFF;
+        }
+      }
+      @include media-max($XS) {
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      
     }
   }
 }
