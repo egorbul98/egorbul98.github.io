@@ -24,11 +24,11 @@
 
     @include media-max($M) {
       flex-direction: column;
-
     }
 
     @include media-max($S) {
       margin-top: 58px;
+      padding-left: 0;
     }
 
     @include media-max($XS) {
@@ -50,6 +50,15 @@
 
       .stage-info .list {
         margin-top: 30px;
+
+        @include media-max($S) {
+          margin-top: 24px;
+        }
+        @include media-max(380) {
+          .email{
+            display: block;
+          }
+        }
       }
 
       @include media-max($L) {
@@ -69,9 +78,13 @@
       .stage-info p {
         margin-bottom: 34px;
 
+        @include media-max($S) {
+          margin-bottom: 25px;
+        }
         &:last-child {
           margin-bottom: 0;
         }
+        
       }
 
       @include media-max($L) {
@@ -105,6 +118,10 @@
         padding-left: 0;
       }
 
+      @include media-max($S) {
+        padding-right: 0;
+      }
+
       @include media-max($XS) {
         margin-top: 54px;
       }
@@ -122,10 +139,26 @@
         max-width: 100%;
         margin-top: 60px;
         padding-left: 0;
+        .list-item .br{
+          display: none;
+        }
       }
+      @include media-max(390) {
+        .list-item .br-second{
+          display: block;
+        }
+        .list-item .br{
+          display: block;
+        }
+      }
+
 
       @include media-max($XS) {
         margin-top: 54px;
+        
+        .list-item{
+          margin-bottom: 12px;
+        }
       }
     }
 
@@ -135,6 +168,10 @@
 
       .stage-info .list-item {
         margin-bottom: 18px;
+
+        @include media-max($XS) {
+          margin-top: 12px;
+        }
       }
 
       @include media-max($L) {
@@ -147,9 +184,12 @@
         margin-top: 60px;
         padding-left: 0;
       }
-
+      @include media-max($S) {
+        padding-right: 0;
+      }
       @include media-max($XS) {
         margin-top: 54px;
+        
       }
     }
 
@@ -193,6 +233,13 @@
           margin-right: 14px;
           width: 11px;
           height: 11px;
+
+          @include media-max($XS){
+            width: 7px;
+            height: 7px;
+            margin-right: 10px;
+            margin-top: 9px;
+          }
         }
       }
     }
@@ -201,31 +248,50 @@
       margin-top: 30px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      @include media-max($XS){
+        margin-top: 16px;
+        border-top: 2px solid $green;
+        padding-top: 14px;
+        justify-content: space-between;
+      }
 
       .old-price {
         color: $pink;
         font-size: 28px;
         font-family: $font-m;
-        position: relative;
+        
         letter-spacing: -1px;
 
-        &::after {
-          position: absolute;
-          top: 52%;
-          left: -5px;
-          content: '';
-          display: flex;
+        @include media-max($XS){
           width: 100%;
-          min-width: 162px;
-          height: 2px;
-          background-color: $pink;
-
-          @include media-max($LM) {
-            font-size: 23px;
-            min-width: 132px;
-          }
+          margin-bottom: 4px;
         }
 
+        .text{
+          position: relative;
+          &::after {
+            position: absolute;
+            top: 52%;
+            left: -5px;
+            content: '';
+            display: flex;
+            width: 100%;
+            min-width: 162px;
+            height: 2px;
+            background-color: $pink;
+  
+            @include media-max($LM) {
+              font-size: 23px;
+              min-width: 132px;
+            }
+  
+            @include media-max($XS){
+              width: 100%;
+              margin-bottom: 4px;
+            }
+          }
+        }
         @include media-max($LM) {
           font-size: 23px;
         }
@@ -239,6 +305,10 @@
 
         @include media-max($LM) {
           font-size: 20px;
+        }
+
+        @include media-max($XS){
+         margin-left: 0;
         }
       }
 
@@ -254,6 +324,10 @@
         @include media-max($S) {
           font-size: 18px;
         }
+
+        @include media-max($XS){
+          margin-left: 0;
+         }
       }
     }
 
@@ -269,7 +343,13 @@
 
     @include media-max($S) {
       margin-bottom: 28px;
+      padding-left: 22px;
     }
+
+    @include media-max($XS) {
+      padding-left: 16px;
+    }
+
     &__title {
       text-align: left;
       padding-left: 22px;
@@ -283,6 +363,7 @@
 
       @include media-max($XS) {
         padding-left: 9px;
+        padding-right: 1px;
       }
     }
 

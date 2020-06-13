@@ -86,6 +86,7 @@ h4.title{
     font-size: 21px;
   }
   @include media-max($XS) {
+    // font-size: 17.8px;
     font-size: 18px;
   }
 }
@@ -173,6 +174,11 @@ p{
       background-color: $green;
       border-radius: 50%;
       margin-right: 10px;
+
+      @include media-max($XS){
+        width: 7px;
+        height: 7px;
+      }
     }
   }
 }
@@ -192,7 +198,9 @@ p{
   width: 100%;
   color: $col-input;
   overflow: hidden;
-
+  transition: all 0.25s;
+  outline: none;
+  border: none;
   @include media-max($M){
     height: 60px;
     font-size: 16px;
@@ -205,8 +213,13 @@ p{
   &::placeholder {
     color: $col-input;
   }
+
+  &:hover{
+    background-color: $col-bg-main;
+  }
 }
 .btn-submit{
+  cursor: pointer;
   border: none;
   outline: none;
   background-color: $pink;
@@ -220,7 +233,7 @@ p{
   border-radius: 6px;
   color: #ffffff;
   font-weight: bold;
-
+  transition: all 0.25s;
   @include media-max($M){
     height: 60px;
     padding-left: 30px;
@@ -231,6 +244,10 @@ p{
     font-size: 18px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  &:hover{
+    background-color: $pink-second;
   }
 }
 
