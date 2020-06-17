@@ -71,9 +71,11 @@
   .checkbox-field {
     margin-top: 25px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     .check {
+      -webkit-appearance: none;
+      margin-top: 1px;
       display: flex;
       justify-content: center;
       align-items: center;
