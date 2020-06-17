@@ -93,7 +93,7 @@
         .list-item {
           margin-bottom: 12px;
           &::before{
-            display: none;
+            // display: none;
           }
 
           
@@ -227,7 +227,11 @@
   }
 
 
-
+.italic{
+  @include media-max($M) {
+    font-style: italic;
+  }
+}
   .right-block {
     @include media-max($M) {
       display: none;

@@ -201,6 +201,7 @@ p{
   transition: all 0.25s;
   outline: none;
   border: none;
+  -webkit-appearance: none;
   @include media-max($M){
     height: 60px;
     font-size: 16px;
@@ -219,6 +220,7 @@ p{
   }
 }
 .btn-submit{
+  -webkit-appearance: none;
   cursor: pointer;
   border: none;
   outline: none;

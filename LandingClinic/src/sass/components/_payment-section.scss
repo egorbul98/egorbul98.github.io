@@ -91,7 +91,7 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-
+    
     @include media-max($S) {
       margin-top: 22px;
       border-radius: 0;
@@ -103,6 +103,23 @@
       max-width: 100%;
     }
 
+    .form{
+      width: 100%;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+
+      height: 250px;
+      @include media-max($XS){
+        margin-top: 0;
+      }
+      @include media-max(350){
+        height: 300px;
+      }
+
+     
+    }
     .icon {
       position: absolute;
       left: 50%;
